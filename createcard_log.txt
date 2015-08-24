@@ -1,0 +1,4 @@
+INSERT INTO s_card SET customer_id='52', card_name='’≈≤©', card_code='430121198703066713', card_type=0, card_phone='13888888888', card_email='222@SS.CC'
+INSERT INTO s_card SET customer_id='52', card_name='’≈≤©', card_code='430121198703066713', card_type=0, card_phone='13888888888', card_email='222@SS.CC'
+INSERT INTO s_card SET customer_id='52', card_name='Âº†Âçö', card_code='430121198703066713', card_type=0, card_phone='13888888888', card_email='222@SS.CC'
+INSERT INTO s_card SET customer_id='52', card_name='Âº†Âçö', card_code='430121198703066713', card_type=0, card_phone='13874915560', card_email='sdfs@22.com'

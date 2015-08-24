@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的购物车-核对订单信息</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/other.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script>
+$(function(){
+	$('.flexslider').flexslider({
+		directionNav: true,
+		pauseOnAction: false
+	});
+});
+</script>
+<script>
+function MM_over(mmObj){
+	var mSubObj = mmObj.getElementsByTagName("div")[0];
+	mSubObj.style.display = "block";
+	mSubObj.style.backgroundColor = "rgb";
+}
+function MM_out(mmObj) {
+	var mSubObj = mmObj.getElementsByTagName("div")[0];
+	mSubObj.style.display = "none";
+	
+}
+</script>
+</script>
+<script language="javascript">          function switchMenustyle(num) {              for(var id = 1; id <= 4; id++) {                 if (id == num) {                                       document.getElementById("mynav" + id).className= "hover";                 }                  else {                                   document.getElementById("mynav" + id).className = "";                 }}         }          </script>
+</head>
+
+<body>
+<!--top-->
+<div class="ym">
+  <div class="w1000">
+    <div class="left welcome">
+      <div class="left">您好，欢迎来到可益健康网！</div>
+      <div class="left ym_lj"> <a href="#">登录</a> <a href="#">|&nbsp;&nbsp;免费注册</a> <a href="#">|&nbsp;&nbsp;收藏本站</a> </div>
+    </div>
+    <div class="right">
+      <div class="right welcome">关注我们：<a href="#"><img src="images/wb.jpg" width="16" height="16" class="pr" /></a><a href="#"><img src="images/wx.jpg" width="16" height="16" /></a></div>
+      <div class="right welcome ym_lj pr"><a href="#">帮助中心&nbsp;&nbsp;|</a></div>
+      <div class="right wdzh" onmouseover="MM_over(this)" onmouseout="MM_out(this)">我的帐户&nbsp;&nbsp;|
+        <div style="display: none; z-index:9999;" class="wdzh_nr">
+          <ul>
+            <li><a href="#">我的订单</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li><a href="#">我的订单</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right welcome ym_lj pr"><a href="#">我的订单&nbsp;&nbsp;|</a></div>
+      <div class="right welcome ym_lj pr"><a href="#">购物车&nbsp;&nbsp;|</a></div>
+      <div class="form right">
+        <div class="gwc" onmouseover="MM_over(this)" onmouseout="MM_out(this)"><img src="images/jt.jpg" width="9" height="5" class="jt" />2 项(s) - ￥100.00
+          <div style="display: none; z-index:9999;" class="gwc_nr">
+            <p class="bold lh20 pt10">最近加入的宝贝</p>
+            <div class="of gwc_bb"><a href="#"><img src="images/tp.jpg" width="207" height="207" class="tp left pr" /></a>
+              <div class="left lh20">
+                <p class="gwc_wz"><a href="#" class="sc">买一送一台湾酵买一送一台湾酵素素送一台湾酵素素</a></p>
+                <p><span class="red pr">¥130.00</span><a href="#" class="sc">删除</a></p>
+              </div>
+            </div>
+            <div class="of gwc_bb"><a href="#"><img src="images/tp.jpg" width="207" height="207" class="tp left pr" /></a>
+              <div class="left lh20">
+                <p class="gwc_wz"><a href="#" class="sc">买一送一台湾酵买一送一台湾酵素素送一台湾酵素素</a></p>
+                <p><span class="red pr">¥130.00</span><a href="#" class="sc">删除</a></p>
+              </div>
+            </div>
+            <div class="gwc_ck"><a href="#">查看购物车</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--top end--> 
+<!--搜索-->
+<div class="w1000">
+  <div class="logo left"><a href="#"><img src="images/logo3.jpg" width="190" height="66" /></a></div>
+  <div class="right sopping_cart"><img src="images/shopping_cart2.jpg" width="538" height="58" /></div>
+</div>
+<!--搜索 end--> 
+<!--导航-->
+<div class="dh2"></div>
+<!--导航 end--> 
+<!--我的购物车-->
+<div class="bg2">
+  <div class="w1000">
+    <div class="f18 pt20">选择收货地址</div>
+    <div class="selectads mt10">
+      <ul id="shippingAddressListPanel" class="myaddrlist">
+        <li class="curr" sysno="13718160" aid="2046">
+          <label>
+            <input type="radio" name="addSel">
+            <span class="name">公司</span> <span class="addrinfo">通泰街街道万达广场C3栋705号</span><span class="phone">电话：<span>1257889547</span></span></label>
+          <a href="javascript:void(0);" class="edit orange">[修改]</a><b class="sep">|</b><a href="javascript:void(0);" class="edit orange" >[删除]</a> </li>
+        <li class="last">
+          <label>
+            <input type="radio" name="addSel" checked="checked">
+            <span class="name name_newaddr">使用新收货地址</span></label>
+        </li>
+      </ul>
+      <div class="newaddr formsub formsubB mt5" >
+        <form class="form_newaddr" name="form_newaddr" >
+          <ul>
+            <li>
+              <label>地址别名：</label>
+              <input type="hidden" name="SysNo" value="0">
+              <input style="width: 210px;" type="text" class="intxt">
+              <span class="need">*</span> <span class="Validform_checktip">简单易记的地址名称，如"家"，"我的公司"等</span> </li>
+            <li>
+              <label>收货人：</label>
+              <input style="width: 210px;" type="text" class="intxt">
+              <span class="need">*</span> <span class="Validform_checktip"></span> </li>
+            <li>
+              <label>所在地区：</label>
+              <select class="sys_select" style="width:150px;" name="Province">
+                <option>请选择省份</option>
+                <option>北京</option>
+                <option>天津</option>
+              </select>
+              <select class="sys_select" style="width:150px;" name="City">
+                <option>请选择城市</option>
+              </select>
+              <select class="sys_select" style="width:150px;">
+                <option>请选择地区</option>
+              </select>
+              <span class="need">*</span> <span class="Validform_checktip"></span> </li>
+            <li>
+              <label>详细地址：</label>
+              <input style="width: 430px;" type="text" class="intxt">
+              <span class="need">*</span> <span class="Validform_checktip">请您正确填写详细收货地址，如街道名、门牌号、房间名等信息</span> </li>
+            <li>
+              <label>手机号码：</label>
+              <input style="width: 145px;" type="text" class="intxt">
+              或<span class="p0_5"> 固定电话：</span>
+              <input style="width: 145px;" type="text" class="intxt" maxlength="15">
+              <span class="need">*</span> <span class="Validform_checktip">手机和电话必须填写一个</span> </li>
+            <li>
+              <label>邮政编码：</label>
+              <input style="width: 145px;" type="text" class="intxt">
+              <span class="need">*</span><span class="Validform_checktip"></span>
+              <input type="hidden" name="ReceiveFax" value="">
+            </li>
+          </ul>
+          <p class="action"> <a href="javascript:void(0);" class="btn"><span>保存地址</span></a> <a href="javascript:void(0);" class="btn cancel"><span>取消</span></a> <span class="Validform_checktip"></span> </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="w1000">
+    <div class="f18 pt20"><a href="#" class="right sc_a f18">[更新认证信息]</a>实名信息备案</div>
+    <div class="selectads mb20 mt10">
+      <div class="tsxx mt10">
+          <span>提示信息：</span>
+          因涉及国家监管部门规定，需要对购买人信息实名备案，可益网站不会保留相关个人隐私信息，请放心填写。
+      </div>
+      <div class="newaddr formsub formsubB" style="border-top:none" >
+        <form class="form_newaddr" name="form_newaddr" >
+          <ul>
+            <li>
+              <label>姓名：</label>
+              <input type="hidden">
+              <input style="width: 210px;" type="text" class="intxt">
+              <span class="need">*</span></li>
+            <li>
+              <label>证件类型：</label>
+              <select class="sys_select">
+                <option>身份证</option>
+              </select> 
+              <span class="need">*</span> <span class="Validform_checktip"></span> </li>
+            <li>
+              <label>证件号：</label>
+              <input type="hidden">
+              <input style="width: 210px;" type="text" class="intxt">
+              <span class="need">*</span></li>
+            <li>
+              <label>性别：</label>
+              <label style="text-align:left; width:15px"></label>
+              <label>出生日期：</label>
+              <span></span>
+              <input type="hidden" >
+            </li>
+            <li>
+              <label>手机号：</label>
+              <input type="hidden">
+              <input style="width: 210px;" type="text" class="intxt">
+            <span class="need">*</span></li>
+            <li>
+              <label>Email：</label>
+              <input type="hidden">
+              <input style="width: 210px;" type="text" class="intxt">
+            <span class="need">*</span></li>
+            <li>
+              <label>地址：</label>
+              <input style="width: 430px;" type="text" class="intxt">
+            <span class="need">*</span></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="w1000">
+    <div class="f18 pt20"><a href="#" class="right sc_a f18">[返回购物车]</a>选购商品清单</div>
+    <div class="pt10">
+      <table class="table1 f14w">
+        <tr>
+          <td style="width:45%">商品名称</td>
+          <td style="width:10%">单价</td>
+          <td style="width:10%">进口税</td>
+          <td style="width:12%">数量</td>
+          <td style="width:10%">小计</td>
+        </tr>
+      </table>
+      <table class="table2 center">
+        <tr>
+          <td style="width:45%; text-align:left;"><a href="#" class="spt left"><img src="images/tp.jpg" width="207" height="207" /></a><a href="#" class="bt5 left">汤臣倍健R蛋白粉附量具）增强免疫力 全家</a></td>
+          <td style="width:10%">¥96</td>
+          <td style="width:10%">¥9.6<span class="red bold">（免税）</span></td>
+          <td style="width:12%">2</td>
+          <td style="width:10%">¥96</td>
+        </tr>
+      </table>
+      <table class="table2 center">
+        <tr>
+          <td style="width:45%; text-align:left;"><a href="#" class="spt left"><img src="images/tp.jpg" width="207" height="207" /></a><a href="#" class="bt5 left">汤臣倍健R蛋白粉附量具）增强免疫力 全家</a></td>
+          <td style="width:10%">¥96</td>
+          <td style="width:10%">¥9.6<span class="red bold">（免税）</span></td>
+          <td style="width:12%">2</td>
+          <td style="width:10%">¥96</td>
+        </tr>
+      </table>
+      <div class="kyzm of lh20 c57">
+        <div class="left kyzm_ck">跨境通浦东机场自贸仓出库（圆通快递-跨境通自贸仓）</div>
+        <div class="right">
+          <span class="right ml20">合计：¥<span class="f14w c35">200.00</span></span>
+          <span class="right ml20">货款：¥<span class="c35">192.00</span></span>
+          <span class="right ml20">运费：¥<span class="c35">8.00</span></span>
+          <span class="right ml20">本单税费：¥<span class="c35">0.00</span><span class="mian center">免</span></span>
+        </div>
+      </div>
+      <div class="bg_bs of yhq">
+         <span class="green right lh23">-¥0.00</span>
+         <span class="right" style="padding-right:70px;">
+           <select style="width:150px;" class="yhq_sel">
+             <option>不使用优惠券</option>
+           </select>
+         </span>
+        <span class="yhq_tp right"></span>
+      </div>
+      <div class="kyzm tr c57">店铺合计（含运费，税费）：<span class="hs2 f18">¥200.00</span></div>
+    </div>
+  </div>
+  <div class="w1000">
+    <div class="f18 pt20">选择支付方式</div>
+    <div class="bg_bs mt10" style="border-top:2px solid #e1e1e1; position:relative;">
+      <div style="height:39px; border-bottom:1px solid #f5f5f5;"></div>
+      <div class="zffs">
+        <ul>
+          <li id="b1" onclick="setTab('b',1,2)"  class="hover8">支付平台</li>
+          <li id="b2" onclick="setTab('b',2,2)" >网银支付</li>
+        </ul>
+      </div>
+      <div class="of clear zffs_nr">
+        <div id="con_b_1">
+          <div class="zffs_zfpt">
+            <ul>
+              <li style="height:80px;width:25%;">
+                  <label style="height:30px;">
+                      <input type="radio" name="zfpt" >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_118_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li style="height:80px;width:25%;">
+                  <label style="height:30px;">
+                      <input type="radio" checked="checked" name="zfpt"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_112_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li style="height:80px;width:25%;">
+                  <label style="height:30px;">
+                      <input type="radio" name="zfpt" >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_111_V1.gif" width="127" height="40" /></a>
+                  <p class="c57">政府指定支付机构，首次使用需注册并完成实名认证，支付过程安全快捷。</p>
+              </li>
+              <li style="height:80px;width:25%;">
+                  <label style="height:30px;">
+                      <input type="radio" name="zfpt" >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_117_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li style="height:80px;width:25%;">
+                  <label style="height:30px;">
+                      <input type="radio" name="zfpt" >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_114_V1.gif" width="127" height="40" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="con_b_2" style="display:none">
+          <div class="zffs_zfpt2 of">
+            <ul>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf" >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170005_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171010_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1174008_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171025_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171023_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170009_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171022_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170031_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170030_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170007_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170028_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170026_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170027_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170004_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1170015_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171021_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1176024_V1.gif" width="127" height="40" /></a>
+              </li>
+              <li>
+                  <label>
+                      <input type="radio" name="wyzf"  >
+                  </label>
+                  <a href="javascript:void(0);"><img src="images/brand_127X40_1171424_V1.gif" width="127" height="40" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var nav=document.getElementById(name+i);
+  var conlist=document.getElementById("con_"+name+"_"+i);
+  nav.className=i==cursel?"hover8":"";
+  conlist.style.display=i==cursel?"block":"none";
+ }
+}
+</script>
+  </div>
+  <div class="w1000 pt10">
+    <div class="hs2 f18 bold pt20">提交订单</div>
+    <div class="bg_bs mt10">
+      <div class="tjdd of">
+        <div class="left">
+          <p><a onclick="openShutManager(this,'box4',false)" class="c57" style="cursor:pointer"><span class="jia left"></span>使用我的优惠券</a>&nbsp;&nbsp;<a class="c999" href="javascript:void(0)">[查看我可用的平台优惠券]</a></p>
+          <div id="box4" style="display:none" class="bm c57">
+            <p><span class="left">优惠券编码：</span><input type="text" class="yhq_ipt left" /><a href="javascript:void(0)" class="tjyhq"></a></p>
+          </div>
+        </div>
+        <script type="text/javascript">
+		//=点击展开关闭效果=
+		function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
+		var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+		var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+		var openTip = oOpenTip || "";
+		var shutTip = oShutTip || "";
+		if(targetObj.style.display!="none"){
+		   if(shutAble) return;
+		   targetObj.style.display="none";
+		   if(openTip  &&  shutTip){
+			sourceObj.innerHTML = shutTip; 
+		   }
+		} else {
+		   targetObj.style.display="block";
+		   if(openTip  &&  shutTip){
+			sourceObj.innerHTML = openTip; 
+		   }
+		}
+		}
+		</script>
+        <div class="right">
+          <p class="f14 pb12 of"><span class="right qian7 hs2">¥200.00</span><span class="right spxj c57">共 <span class="hs2">6</span> 件商品商品金额总计：</span></p>
+          <p class="f14 pb12 of"><span class="right qian7">¥8.00</span><span class="right spxj c57">运费小计：</span></p>
+          <p class="f14 pb12 of"><span class="right qian7">¥8.00</span><span class="right spxj c57">税费小计：</span></p>
+          <p class="f14 pb12 of"><span class="right qian7 green">-¥0.00</span><span class="right spxj c57">使用优惠券：</span></p>
+          <p class="f14 pb12 of"><span class="right qian7 green">-¥0.00</span><span class="right spxj c57">折扣金额：</span></p>
+          <p class="right f14 mr20 c57"><input type="checkbox" />我已阅读并同意<a href="javascript:void(0);">《跨境通消费者购物须知》</a></p>
+        </div>
+      </div>
+      <div class="of tj00">
+        <div class="right"><a href="javascript:void(0);" class="btn_booklist_sub"></a></div>
+        <span class="right f32 hs2 bold lh50">应付总金额：¥200.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="w1000 pt15">
+    <div class="f18 pt20">配送说明</div>
+    <div class="bg_bs mt10 tbsm c57"><span class="bold hs2">特别说明：</span>受中国国家航空管制影响，电池、液体、清洗剂、易燃易爆等产品无法里德空运，可益可能会根据实际情况采用的快递方式，若造成一定延误，请谅解。请随时关注你的订单状态及出库后的包裹跟踪信息（我们会有短信通知）。</div>
+  </div>
+</div>
+<!--我的购物车 end--> 
+<!--底部-->
+<div class="center foot2" style="border-top:1px solid #e7e7e7;">
+  <p class="lh23">Copyright (C) 2009-2010 All Rights Reserved. 可益健康 2014 All Rights Reserved 沪ICP备14014738号</p>
+  <p class="lh23">服务时间：周一至周日 08:30 — 20:00   全国订购及服务热线：400-829-8568</p>
+  <p class="pt10 lh23">增值电信业务经营许可证：沪XXXXXXXX  网络文化经营许可证：沪网文[2015]XXXXXXXX号  互联网医疗保健信息服务 审核同意书 沪网审【2014】X号</p>
+  <p class="lh23">互联网药品信息服务资质证书编号：沪-（经营性）-2012-0005</p>
+  <p class="pt10"><img src="images/tp05.jpg" width="701" height="29" /></p>
+</div>
+<!--底部 end-->
+<div class="top"><a href="#"><img src="images/top.jpg" width="53" height="53" /></a></div>
+</body>
+</html>
