@@ -1,3 +1,0 @@
-{"Code":"0","Desc":"操作成功!","Data":{"FEPBillId":100832,"PurchasingTotalAmount":58.000000}}
-{"Code":"0","Desc":"操作成功!","Data":{"FEPBillId":100833,"PurchasingTotalAmount":58.000000}}
-{"Code":"0","Desc":"操作成功!","Data":{"FEPBillId":100834,"PurchasingTotalAmount":58.000000}}
