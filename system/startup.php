@@ -1,4 +1,5 @@
 <?php
+
 // Error Reporting
 error_reporting(E_ALL);
 
@@ -74,6 +75,7 @@ if (!isset($_SERVER['REQUEST_URI'])) {
 require_once(DIR_SYSTEM . 'helper/utf8.php'); 
 
 // Engine
+require_once(DIR_MOBILE_SYSTEM . 'engine/mobileAction.php'); 
 
 require_once(DIR_SYSTEM . 'engine/action.php'); 
 require_once(DIR_SYSTEM . 'engine/controller.php');

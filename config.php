@@ -1,57 +1,62 @@
 <?php
 
 /*// HTTP
-define('HTTP_SERVER', 'http://www.shcoyee.com/');
+define('HTTP_SERVER', 'http://www.shcoyee_git.com/');
 define('HTTP_IMAGE', 'http://localhost/keyi/image/');
 define('HTTP_ADMIN', 'http://localhost/keyi/admin/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://www.shcoyee.com/');
+define('HTTPS_SERVER', 'http://www.shcoyee_git.com/');
 define('HTTPS_IMAGE', 'http://localhost/keyi/image/');
 
 // DIR
-define('DIR_APPLICATION', 'D:\wamp\www\shcoyee/catalog/');
-define('DIR_SYSTEM', 'D:\wamp\www\shcoyee/system/');
-define('DIR_DATABASE', 'D:\wamp\www\shcoyee/system/database/');
-define('DIR_LANGUAGE', 'D:\wamp\www\shcoyee/catalog/language/');
-define('DIR_TEMPLATE', 'D:\wamp\www\shcoyee/catalog/view/theme/');
-define('DIR_CONFIG', 'D:\wamp\www\shcoyee/system/config/');
-define('DIR_IMAGE', 'D:\wamp\www\shcoyee/image/');
-define('DIR_CACHE', 'D:\wamp\www\shcoyee/system/cache/');
-define('DIR_DOWNLOAD', 'D:\wamp\www\shcoyee/download/');
-define('DIR_LOGS', 'D:\wamp\www\shcoyee/system/logs/');
+define('DIR_APPLICATION', 'D:\wamp\www\shcoyee_git/catalog/');
+define('DIR_SYSTEM', 'D:\wamp\www\shcoyee_git/system/');
+define('DIR_DATABASE', 'D:\wamp\www\shcoyee_git/system/database/');
+define('DIR_LANGUAGE', 'D:\wamp\www\shcoyee_git/catalog/language/');
+define('DIR_TEMPLATE', 'D:\wamp\www\shcoyee_git/catalog/view/theme/');
+define('DIR_CONFIG', 'D:\wamp\www\shcoyee_git/system/config/');
+define('DIR_IMAGE', 'D:\wamp\www\shcoyee_git/image/');
+define('DIR_CACHE', 'D:\wamp\www\shcoyee_git/system/cache/');
+define('DIR_DOWNLOAD', 'D:\wamp\www\shcoyee_git/download/');
+define('DIR_LOGS', 'D:\wamp\www\shcoyee_git/system/logs/');
 
 // DB
 define('DB_DRIVER', 'mysql');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'shcoyee');
+define('DB_USERNAME', 'shcoyee_git');
 define('DB_PASSWORD', 'System12');
-define('DB_DATABASE', 'shcoyee');
+define('DB_DATABASE', 'shcoyee_git');
 define('DB_PREFIX', 's_');
 */
 
 
 
 // HTTP
-define('HTTP_SERVER', 'http://localhost/shcoyee/');
-define('HTTP_IMAGE', 'http://localhost/shcoyee/image/');
-define('HTTP_ADMIN', 'http://localhost/shcoyee/admin/');
+define('HTTP_SERVER', 'http://localhost/shcoyee_git/');
+define('HTTP_IMAGE', 'http://localhost/shcoyee_git/image/');
+define('HTTP_ADMIN', 'http://localhost/shcoyee_git/admin/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/shcoyee/');
-define('HTTPS_IMAGE', 'http://localhost/shcoyee/image/');
+define('HTTPS_SERVER', 'http://localhost/shcoyee_git/');
+define('HTTPS_IMAGE', 'http://localhost/shcoyee_git/image/');
 
 // DIR
-define('DIR_APPLICATION', 'D:\wamp\www\shcoyee/catalog/');
-define('DIR_SYSTEM', 'D:\wamp\www\shcoyee/system/');
-define('DIR_DATABASE', 'D:\wamp\www\shcoyee/system/database/');
-define('DIR_LANGUAGE', 'D:\wamp\www\shcoyee/catalog/language/');
-define('DIR_TEMPLATE', 'D:\wamp\www\shcoyee/catalog/view/theme/');
-define('DIR_CONFIG', 'D:\wamp\www\shcoyee/system/config/');
-define('DIR_IMAGE', 'D:\wamp\www\shcoyee/image/');
-define('DIR_CACHE', 'D:\wamp\www\shcoyee/system/cache/');
-define('DIR_DOWNLOAD', 'D:\wamp\www\shcoyee/download/');
-define('DIR_LOGS', 'D:\wamp\www\shcoyee/system/logs/');
+define('DIR_APPLICATION', 'D:\wamp\www\shcoyee_git/catalog/');
+define('DIR_SYSTEM', 'D:\wamp\www\shcoyee_git/system/');
+define('DIR_DATABASE', 'D:\wamp\www\shcoyee_git/system/database/');
+define('DIR_LANGUAGE', 'D:\wamp\www\shcoyee_git/catalog/language/');
+define('DIR_TEMPLATE', 'D:\wamp\www\shcoyee_git/catalog/view/theme/');
+define('DIR_CONFIG', 'D:\wamp\www\shcoyee_git/system/config/');
+define('DIR_IMAGE', 'D:\wamp\www\shcoyee_git/image/');
+define('DIR_CACHE', 'D:\wamp\www\shcoyee_git/system/cache/');
+define('DIR_DOWNLOAD', 'D:\wamp\www\shcoyee_git/download/');
+define('DIR_LOGS', 'D:\wamp\www\shcoyee_git/system/logs/');
+
+//Mobile DIR
+define('DIR_MOBILE_APPLICATION', 'D:\wamp\www\shcoyee_git/mobile/catalog/');
+define('DIR_MOBILE_SYSTEM', 'D:\wamp\www\shcoyee_git/mobile/system/');
+define('DIR_MOBILE_TEMPLATE', 'D:\wamp\www\shcoyee_git/mobile/catalog/view/theme/');
 
 // DB
 define('DB_DRIVER', 'mysql');

@@ -225,23 +225,6 @@ $url->addRewrite($rewrite);
 $timer = new Runtime($registry);
 $timer->start();
 
-//If client is mobile, redirect to ./mobile/
-$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-
-$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
-
-if(($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap'))
-{
-    $Loaction = 'mobile/';
-
-    if (!empty($Loaction))
-    {
-        header("Location: $Loaction\n");
-
-        exit;
-    }
-
-}
 // Maintenance Mode
 $controller->addPreAction(new Action('common/maintenance'));
 
@@ -251,9 +234,22 @@ $controller->addPreAction(new Action('common/seo_url'));
 // RESTFUL URL's
 //$controller->addPreAction(new Action('common/reset'));
 
+//If client is mobile, redirect to ./mobile/
+$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+
+$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
+//$isMobile = ($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap');
+$isMobile = true;
 // Router
 if (isset($request->get['route'])) {
-	$action = new Action($request->get['route']);
+	if ($isMobile) {
+		$action = new MobileAction($request->get['route']);
+	} else {
+		$action = new Action($request->get['route']);	
+	}
+	
+} elseif ($isMobile) {
+	$action = new MobileAction('common/home');
 } else {
 	$action = new Action('common/home');
 }
