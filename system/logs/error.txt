@@ -2528,3 +2528,11 @@
 2015-08-14 14:09:42 - PHP Notice:  Undefined index: image1 in D:\wamp\www\shcoyee\catalog\model\catalog\product.php on line 43
 2015-08-14 14:09:42 - PHP Notice:  Undefined index: image1 in D:\wamp\www\shcoyee\catalog\model\catalog\product.php on line 43
 2015-08-14 14:09:42 - PHP Notice:  Undefined index: image1 in D:\wamp\www\shcoyee\catalog\model\catalog\product.php on line 43
+2015-08-25 15:24:09 - PHP Notice:  Undefined variable: title in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 5
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: title in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 5
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: base in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 6
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: description in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 7
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: keywords in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 10
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: icon in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 13
+2015-08-25 15:26:32 - PHP Notice:  Undefined variable: links in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 16
+2015-08-25 15:26:32 - PHP Warning:  Invalid argument supplied for foreach() in D:\wamp\www\shcoyee_git\mobile\catalog\view\theme\new\template\common\home.tpl on line 16
