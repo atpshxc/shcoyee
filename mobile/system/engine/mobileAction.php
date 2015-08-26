@@ -20,7 +20,6 @@ final class MobileAction {
 				
 				continue;
 			}
-                        
 			if (is_file(DIR_MOBILE_APPLICATION . 'controller/' . str_replace('../', '', $path) . '.php')) {
                      
 				$this->file = DIR_MOBILE_APPLICATION . 'controller/' . str_replace('../', '', $path) . '.php';

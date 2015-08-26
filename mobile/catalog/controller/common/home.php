@@ -1,5 +1,5 @@
 <?php  
-class ControllerCommonHome extends Controller {
+class ControllerCommonHome extends MobileController {
 	public function index() {
 
 		
@@ -15,11 +15,8 @@ class ControllerCommonHome extends Controller {
 		}
 		
 		$this->children = array(
-			'common/column_left',
-			'common/column_right',
-			'common/content_top',
-			'common/content_bottom',
 			'common/footer',
+			'common/content',
 			'common/header'
 		);
 										
@@ -37,7 +34,6 @@ class ControllerCommonHome extends Controller {
 			require_once($file);
 
 			$controller = new $class($this->registry);
-			
 			$controller->$method($args);
 			
 			return $controller->output;
@@ -56,10 +52,9 @@ class ControllerCommonHome extends Controller {
 	
 	// we keeep this method just make all old opencart part work with shopilex as well
 	private function render_old() {
-		/*foreach ($this->children as $child) {
-			echo $this->getChild($child);
+		foreach ($this->children as $child) {
 			$this->data[basename($child)] = $this->getChild($child);
-		}*/
+		}
 	
 		if (file_exists(DIR_MOBILE_TEMPLATE . $this->template)) {
 			extract($this->data);
