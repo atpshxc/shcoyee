@@ -76,6 +76,7 @@ require_once(DIR_SYSTEM . 'helper/utf8.php');
 
 // Engine
 require_once(DIR_MOBILE_SYSTEM . 'engine/mobileAction.php'); 
+require_once(DIR_MOBILE_SYSTEM . 'engine/mobileController.php'); 
 
 require_once(DIR_SYSTEM . 'engine/action.php'); 
 require_once(DIR_SYSTEM . 'engine/controller.php');
