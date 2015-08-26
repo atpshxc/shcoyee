@@ -34,6 +34,7 @@
 <script src="catalog/view/javascript/common.js"></script>
 
 <link href="mobile/catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="mobile/catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
 <script src="mobile/catalog/view/bootstrap/js/bootstrap.js"></script>
 
 <script>
