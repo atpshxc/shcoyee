@@ -1,9 +1,18 @@
 <?php
 // Version
 define('VERSION', '2.0 beta');
-
-
-
+//If client is mobile, redirect to ./mobile/
+$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
+if(($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap'))
+{
+    $Loaction = 'mobile/';
+    if (!empty($Loaction))
+    {
+        header("Location: $Loaction\n");
+        exit;
+    }
+}
 // Config
 require_once('config.php');
  
@@ -12,10 +21,8 @@ if (!defined('DIR_APPLICATION')) {
 	header('Location: install/index.php');  
 	exit;
 }
-
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
-
 // Application Classes
 require_once(DIR_SYSTEM . 'library/customer.php');
 require_once(DIR_SYSTEM . 'library/affiliate.php');
@@ -24,29 +31,23 @@ require_once(DIR_SYSTEM . 'library/tax.php');
 require_once(DIR_SYSTEM . 'library/weight.php');
 require_once(DIR_SYSTEM . 'library/length.php');
 require_once(DIR_SYSTEM . 'library/cart.php');
-
 // Registry
 $registry = new Registry();
-
 // Loader
 $loader = new Loader($registry);
 $registry->set('load', $loader);
-
 // Config
 $config = new Config();
 $registry->set('config', $config);
-
 // Database 
 $db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $registry->set('db', $db);
-
 // Store
 if (isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) {
 	$store_query = $db->query("SELECT * FROM " . DB_PREFIX . "store WHERE REPLACE(`ssl`, 'www.', '') = '" . $db->escape('https://' . str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/') . "'");
 } else {
 	$store_query = $db->query("SELECT * FROM " . DB_PREFIX . "store WHERE REPLACE(`url`, 'www.', '') = '" . $db->escape('http://' . str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/') . "'");
 }
-
 if ($store_query->num_rows) {
 	$config->set('config_store_id', $store_query->row['store_id']);
 } else {
@@ -55,7 +56,6 @@ if ($store_query->num_rows) {
 		
 // Settings
 $query = $db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE store_id = '0' OR store_id = '" . (int)$config->get('config_store_id') . "' ORDER BY store_id ASC");
-
 foreach ($query->rows as $setting) {
 	if (!$setting['serialized']) {
 		$config->set($setting['key'], $setting['value']);
@@ -63,20 +63,16 @@ foreach ($query->rows as $setting) {
 		$config->set($setting['key'], unserialize($setting['value']));
 	}
 }
-
 if (!$store_query->num_rows) {
 	$config->set('config_url', HTTP_SERVER);
 	$config->set('config_ssl', HTTPS_SERVER);	
 }
-
 // Url
 $url = new Url($config->get('config_url'), $config->get('config_ssl'));	
 $registry->set('url', $url);
-
 // Log 
 $log = new Log($config,$config->get('config_error_filename'),'time_log.txt');
 $registry->set('log', $log);
-
 function error_handler($errno, $errstr, $errfile, $errline) {
 	global $log, $config;
 	
@@ -105,13 +101,11 @@ function error_handler($errno, $errstr, $errfile, $errline) {
 	if ($config->get('config_error_log')) {
 		$log->write('PHP ' . $error . ':  ' . $errstr . ' in ' . $errfile . ' on line ' . $errline);
 	}
-
 	return true;
 }
 	
 // Error Handler
 set_error_handler('error_handler');
-
 // Request
 $request = new Request();
 $registry->set('request', $request);
@@ -125,22 +119,16 @@ $registry->set('response', $response);
 // Cache
 $cache = new Cache();
 $registry->set('cache', $cache); 
-
 // Session
 $session = new Session();
 $registry->set('session', $session); 
-
 // Language Detection
 $languages = array();
-
 $query = $db->query("SELECT * FROM " . DB_PREFIX . "language"); 
-
 foreach ($query->rows as $result) {
 	$languages[$result['code']] = $result;
 }
-
 $detect = '';
-
 if (isset($request->server['HTTP_ACCEPT_LANGUAGE']) && ($request->server['HTTP_ACCEPT_LANGUAGE'])) { 
 	$browser_languages = explode(',', $request->server['HTTP_ACCEPT_LANGUAGE']);
 	
@@ -155,7 +143,6 @@ if (isset($request->server['HTTP_ACCEPT_LANGUAGE']) && ($request->server['HTTP_A
 		}
 	}
 }
-
 if (isset($request->get['language']) && array_key_exists($request->get['language'], $languages) && $languages[$request->get['language']]['status']) {
 	$code = $request->get['language'];
 } elseif (isset($session->data['language']) && array_key_exists($session->data['language'], $languages)) {
@@ -167,93 +154,61 @@ if (isset($request->get['language']) && array_key_exists($request->get['language
 } else {
 	$code = $config->get('config_language');
 }
-
 if (!isset($session->data['language']) || $session->data['language'] != $code) {
 	$session->data['language'] = $code;
 }
-
 if (!isset($request->cookie['language']) || $request->cookie['language'] != $code) {	  
 	setcookie('language', $code, time() + 60 * 60 * 24 * 30, '/', $request->server['HTTP_HOST']);
 }			
-
 $config->set('config_language_id', $languages[$code]['language_id']);
 $config->set('config_language', $languages[$code]['code']);
-
 // Language	
 $language = new Language($languages[$code]['directory']);
 $language->load($languages[$code]['filename']);	
 $registry->set('language', $language); 
-
 // Document
 $document = new Document();
 $registry->set('document', $document); 		
-
 // Customer
 $registry->set('customer', new Customer($registry));
-
 // Affiliate
 $affiliate = new Affiliate($registry);		
 $registry->set('affiliate', $affiliate);
-
 if (isset($request->get['tracking']) && !isset($request->cookie['tracking'])) {
 	setcookie('tracking', $request->get['tracking'], time() + 3600 * 24 * 1000, '/');
 }
 		
 // Currency
 $registry->set('currency', new Currency($registry));
-
 // Tax
 $registry->set('tax', new Tax($registry));
-
 // Weight
 $registry->set('weight', new Weight($registry));
-
 // Length
 $registry->set('length', new Length($registry));
-
 // Cart
 $registry->set('cart', new Cart($registry));
 		
 // Front Controller 
 $controller = new Front($registry);
-
 // Rewrite
 $rewrite= new Rewrite($registry);
 $url->addRewrite($rewrite);
-
 // Runtimer
 $timer = new Runtime($registry);
 $timer->start();
-
 // Maintenance Mode
 $controller->addPreAction(new Action('common/maintenance'));
-
 // SEO URL's
 $controller->addPreAction(new Action('common/seo_url'));	
-
 // RESTFUL URL's
 //$controller->addPreAction(new Action('common/reset'));
-
-//If client is mobile, redirect to ./mobile/
-$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-
-$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
-//$isMobile = ($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap');
-$isMobile = true;
 // Router
 if (isset($request->get['route'])) {
-	if ($isMobile) {
-		$action = new MobileAction($request->get['route']);
-	} else {
-		$action = new Action($request->get['route']);	
-	}
-	
-} elseif ($isMobile) {
-	$action = new MobileAction('common/home');
+	$action = new Action($request->get['route']);
 } else {
 	$action = new Action('common/home');
 }
-
 // Dispatch
 $controller->dispatch($action, new Action('error/not_found'));
 $timer->stop(); 
