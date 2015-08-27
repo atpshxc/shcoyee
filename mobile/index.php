@@ -1,17 +1,9 @@
 <?php
 // Version
 define('VERSION', '2.0 beta');
-
-
-
+phpinfo();
 // Config
 require_once('config.php');
- 
-// Install 
-if (!defined('DIR_APPLICATION')) {
-	header('Location: install/index.php');  
-	exit;
-}
 
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
@@ -225,23 +217,6 @@ $url->addRewrite($rewrite);
 $timer = new Runtime($registry);
 $timer->start();
 
-//If client is mobile, redirect to ./mobile/
-$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-
-$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
-
-if(($ua == '' || preg_match($uachar, $ua))&& !strpos(strtolower($_SERVER['REQUEST_URI']),'wap'))
-{
-    $Loaction = 'mobile/';
-
-    if (!empty($Loaction))
-    {
-        header("Location: $Loaction\n");
-
-        exit;
-    }
-
-}
 // Maintenance Mode
 $controller->addPreAction(new Action('common/maintenance'));
 

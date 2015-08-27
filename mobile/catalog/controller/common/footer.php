@@ -1,6 +1,6 @@
 <?php  
-class ControllerCommonFooter extends MobileController {
-	public function index() {
+class ControllerCommonFooter extends Controller {
+	protected function index() {
 		$this->load_language('common/footer');
 		$this->data['google_analytics'] = html_entity_decode($this->config->get('config_google_analytics'), ENT_QUOTES, 'UTF-8');
 		

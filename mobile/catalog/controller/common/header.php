@@ -1,6 +1,6 @@
 <?php   
-class ControllerCommonHeader extends MobileController {
-	public function index() {
+class ControllerCommonHeader extends Controller {
+	protected function index() {
 		$this->data['title'] = $this->document->getTitle();
 		
 		if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
@@ -208,10 +208,11 @@ class ControllerCommonHeader extends MobileController {
 				);
 			}
 		}
-// 		$this->children = array(
-// 			'common/topnav'
-// 		);
-		if (file_exists(DIR_MOBILE_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
+		$this->children = array(
+			'common/topnav'
+		);
+				
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/header.tpl';
 		} else {
 			$this->template = 'default/template/common/header.tpl';

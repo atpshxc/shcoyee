@@ -1,3 +1,7 @@
 <?php echo $header; ?>
-<?php echo $content; ?>
+<?php echo $column_left; ?>
+<?php echo $content_top; ?>
 <?php echo $footer; ?>
+
+
+

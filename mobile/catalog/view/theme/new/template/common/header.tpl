@@ -33,9 +33,9 @@
 
 <script src="catalog/view/javascript/common.js"></script>
 
-<link href="mobile/catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="mobile/catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
-<script src="mobile/catalog/view/bootstrap/js/bootstrap.js"></script>
+<link href="catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
+<script src="catalog/view/bootstrap/js/bootstrap.js"></script>
 
 <script>
 function ajaxcart(mmObj)
@@ -112,7 +112,7 @@ function removeCart(key,calssid) {
 
 <div class="row">
 		<div class="col-xs-12">
-			<a href="/"><img class="img-responsive" src="catalog/view/theme/new/images/logo.jpg"/></a>
+			<a href="<?php echo HTTP_SERVER?>"><img class="img-responsive" src="catalog/view/theme/new/images/logo.jpg"/></a>
 		</div>
 </div>
 <!--导航-->
@@ -120,9 +120,9 @@ function removeCart(key,calssid) {
   <div class="w1200">
     <div class="left meau">
       <ul>
-        <li><a class="hover" id="mynav1" onclick="switchMenustyle(1)" href="/">首页</a></li>
-        <li><a id="mynav2" onclick="switchMenustyle(2)" href="/index.php?route=product/category&path=0&columnsid=1">益健康</a></li>
-        <li><a id="mynav3" onclick="switchMenustyle(3)" href="/index.php?route=product/category&path=0&columnsid=2">益生活</a></li>
+        <li><a class="hover" id="mynav1" onclick="switchMenustyle(1)" href="<?php echo HTTP_SERVER?>">首页</a></li>
+        <li><a id="mynav2" onclick="switchMenustyle(2)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=1">益健康</a></li>
+        <li><a id="mynav3" onclick="switchMenustyle(3)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=2">益生活</a></li>
       </ul>
     </div>
   </div>
