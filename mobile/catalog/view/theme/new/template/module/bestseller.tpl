@@ -1,4 +1,5 @@
 <!--热销产品-->
+<!--
 <div class="rxcp">
   <div class="rxcp_bt">
     <p class="red f32">热销产品</p>
@@ -84,4 +85,5 @@ $i++;
 }
 ?> 
 </div>
+-->
 <!--热销产品 end-->
