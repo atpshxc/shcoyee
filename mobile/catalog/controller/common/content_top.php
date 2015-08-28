@@ -74,7 +74,7 @@ class ControllerCommonContentTop extends Controller {
 				$this->data['modules'][] = $module;
 			}
 		}
-		var_dump($this->data['modules']);
+		//var_dump($this->data['modules']);
                 //exit;
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/content_top.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/common/content_top.tpl';

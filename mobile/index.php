@@ -1,7 +1,7 @@
 <?php
 // Version
 define('VERSION', '2.0 beta');
-phpinfo();
+//phpinfo();
 // Config
 require_once('config.php');
 
