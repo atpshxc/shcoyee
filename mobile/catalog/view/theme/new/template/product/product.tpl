@@ -332,6 +332,7 @@ $('#button-cart').bind('click', function() {
 				$('.attention').fadeIn('slow');
 					
 				$('#cart_total').html(json['total']);
+				$('#cart_total_bottom_menu').html(json['total'].match(/^\d*/));
 				
 				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
 			}	
@@ -366,6 +367,7 @@ $('#button-cart-second').bind('click', function() {
 				$('.attention').fadeIn('slow');
 					
 				$('#cart_total').html(json['total']);
+				$('#cart_total_bottom_menu').html(json['total']);
 				
 				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
 			}	

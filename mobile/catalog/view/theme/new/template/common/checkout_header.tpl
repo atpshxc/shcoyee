@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>购物车</title>
 <link href="catalog/view/theme/new/css/base.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/new/css/other.css" rel="stylesheet" type="text/css" />
@@ -9,6 +10,9 @@
 <script src="catalog/view/theme/new/js/jquery.min.js"></script>
 <script src="catalog/view/theme/new/js/jquery.flexslider-min.js"></script>
 <script src="catalog/view/javascript/common.js"></script>
+<link href="<?php echo HTTP_SERVER?>catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo HTTP_SERVER?>catalog/view/bootstrap/js/bootstrap.js"></script>
 <script>
 $(function(){
 	$('.flexslider').flexslider({
@@ -88,9 +92,11 @@ if(strpos($_SERVER['REQUEST_URI'],'cart'))
     $img='1';
 }
 ?>
+<!--
 <div class="w1000">
-  <div class="logo left"><a href="/"><img src="catalog/view/theme/new/images/logo3.jpg" width="190" height="66" /></a></div>
-  <div class="right sopping_cart"><img src="catalog/view/theme/new/images/shopping_cart<?php echo $img; ?>.jpg" width="538" height="58" /></div>
-</div> 
+  <div class="logo left"><a href="/"><img src="catalog/view/theme/new/images/logo3.jpg" class="responsive"/></a></div>
+  -->
+  <!--<div class="right sopping_cart"><img src="catalog/view/theme/new/images/shopping_cart<?php echo $img; ?>.jpg" width="538" height="58" /></div>-->
+<!--</div>
 
-<div class="dh2"></div>
+<div class="dh2"></div>--> 

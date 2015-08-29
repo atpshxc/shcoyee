@@ -5,9 +5,9 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <form class="form-inline" role="form">
-   <div class="form-group">
-      <select id="filter_category_id" class="form-control">
+  <div class="row">
+  	<div class="col-xs-3">
+  		 <select id="filter_category_id" style="width:110%">
 					<option value="0"><?php echo $text_category; ?></option>
 					<?php foreach ($categories as $category_1) { ?>
 					<?php if ($category_1['category_id'] == $filter_category_id) { ?>
@@ -31,22 +31,18 @@
 					<?php } ?>
 					<?php } ?>
 			</select>
-   </div>
-   <div class="form-group">
-   	<div class="row">
-   		<div class="col-xs-8">
-      		<?php if ($filter_name) { ?>
-			  <input  class="form-control" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
+  	</div>
+  	<div class="col-xs-5 col-xs-offset-1">
+  		<?php if ($filter_name) { ?>
+			  <input class="input-sm" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
 			  <?php } else { ?>
-			  <input  class="form-control" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
+			  <input class="input-sm" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
 			  <?php } ?>
-		</div>
-		<div class="col-xs-4">
-	      <input id="button-search" type="button" value="搜索" class="form-control"/>
-		</div>
-	</div>
-   </div>
-  </form>
+  	</div>
+  	<div class="col-xs-1">
+	  		<button id="button-search" type="button" class="btn">搜索</button>
+  	</div>
+  </div>
 		
   <?php if ($products) { ?>
 <div class="px">
@@ -267,9 +263,9 @@ function display(view) {
 view = $.cookie('display');
 
 if (view) {
-	display(view);
+	//display(view);
 } else {
-	display('list');
+	//display('list');
 }
 //--></script> 
 <?php echo $footer; ?>

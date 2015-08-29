@@ -431,6 +431,14 @@ class ControllerCheckoutCart extends Controller {
     	}
   	}
 	
+  	public function getTotal() {
+  		$json = array();
+  		$json['total'] = $this->cart->countProducts();
+  		$this->load->library('json');
+  		
+  		$this->response->setOutput(Json::encode($json));
+  	}
+  	
 	public function update() {	
 		$this->language->load('checkout/cart');
 		

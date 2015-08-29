@@ -1,4 +1,4 @@
-<div class="ym">
+<!--<div class="ym">
   <div class="w1200">
     <div class="left welcome">
       <div class="left">
@@ -41,3 +41,4 @@
     </div>
   </div>
 </div>
+-->
