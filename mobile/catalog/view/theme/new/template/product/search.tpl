@@ -1,17 +1,13 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
-         <div class="breadcrumb w1200" >
+  <div class="breadcrumb" >
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-   <div class="w1200 px">
-
-	<div class="w840">
-		<div style=" margin: 10px 0; border-style:none; height :30; width:21%;  float:left;  ">
-				<p>
-				<span style="display:inline-block; " >
-				  <select  id="filter_category_id" class="left" >
+  <form class="form-inline" role="form">
+   <div class="form-group">
+      <select id="filter_category_id" class="form-control">
 					<option value="0"><?php echo $text_category; ?></option>
 					<?php foreach ($categories as $category_1) { ?>
 					<?php if ($category_1['category_id'] == $filter_category_id) { ?>
@@ -34,26 +30,26 @@
 					<?php } ?>
 					<?php } ?>
 					<?php } ?>
-				 </select>
-				  &nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				</p>
-		</div>
-		<div style=" margin: 3px 0; border-style:none; height :30; width:77%;  float:right;  ">
-			  <?php if ($filter_name) { ?>
-			  <input type="text" name="filter_name" id="search-filter_name" class="ss left" value="<?php echo $filter_name; ?>" />
+			</select>
+   </div>
+   <div class="form-group">
+   	<div class="row">
+   		<div class="col-xs-8">
+      		<?php if ($filter_name) { ?>
+			  <input  class="form-control" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
 			  <?php } else { ?>
-			  <input type="text" name="filter_name" id="search-filter_name" class="ss left" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
+			  <input  class="form-control" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
 			  <?php } ?>
-				<input id="button-search" type="button" value="搜索" class="ss_btn left"/>
 		</div>
-		<input type="hidden" name="filter_sub_category" value="1" id="sub_category"  />
-		<input type="hidden" name="filter_description" value="1" id="description"  />
+		<div class="col-xs-4">
+	      <input id="button-search" type="button" value="搜索" class="form-control"/>
 		</div>
 	</div>
- </div>
+   </div>
+  </form>
+		
   <?php if ($products) { ?>
-<div class="w1200 px">
+<div class="px">
   <div class="left px_left">
     <span class="left lh26"><?php echo $text_sort; ?> </span>
     <ul class="pxnav left">
@@ -68,73 +64,87 @@
   </div>
 </div>
 
-<div class="w1200">
-
-    <?php 
-	$i=1;
-	foreach ($products as $product) { 
-		if($i%5==0)
-		{
-			$marginRight="margin-right:0";
-		}else
-		{
-			$marginRight="";
-		}
-	?>
+<?php
+	$col = 2;
+	$row_num = ceil(count($products)/$col);
 	
-  <div class="yjk_sp" style="<?php echo $marginRight;?>" >
-    <p class="yjk_sp_tp">
-		<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" 
-		title="<?php echo $product['name']; ?>" width="207" height="210" 
-		alt="<?php echo $product['name']; ?>" /></a></p>
-    <div class="yjk_sp_wz">
-      <a  tager="_blank"  href="<?php echo $product['href']; ?>" class="f14 lh20 c71">
-		<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
-<!--		<div class="jq hs"><span class="right pt8">新品上线</span>  -->
-		<div class="hs"><span class="right pt8">新品上线</span> 
-		
-        <?php if (!$product['special']) { ?>
-			<span class="f14"><span class="f20"><?php echo $product['price']; ?></span>
-        <?php } else { ?>
-			<span class="f14"><p class="f20"><?php echo $product['special']; ?></p><p  style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p></span>
-        <?php } ?>
-        <?php if ($product['tax']) { ?>
-        <br />
-        <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-        <?php } ?>
-		</div>
-    </div>
-    <div class="sp2 f14"><?php 
-	switch($product['classid']){
-		case 1:
-			echo $text_class_id_1;
-			break;
-		case 2:
-			echo $text_class_id_2;
-			break;
-		case 3:
-			echo $text_class_id_3;
-			break;
+	$products_row_col = Array();
+	
+	for($i=0;$i<$row_num;$i++){
+		$products_row_col[$i] = Array();
+		for($k=0;$k<$col;$k++){
+			if(count($products) > $i*$col+$k){
+				$products_row_col[$i][$k] = $products[$i*$col+$k];
+			}
+		}	
 	}
-	?></div>
-
-  </div>
 	
-    <?php $i++;} ?>
-</div>
-
+	foreach ($products_row_col as $product_row) {
+?>
+ 	<div class="row">
+ 	<?php
+ 		foreach ($product_row as $product) {
+ 	?>
+		<div class="col-xs-6">
+			<div class="yjk_sp style">
+		         <p class="yjk_sp_tp">
+					<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" 
+					title="<?php echo $product['name']; ?>" width="207" height="210" 
+					alt="<?php echo $product['name']; ?>" /></a>
+				 </p>
+			    <div class="yjk_sp_wz">
+			      <a  tager="_blank"  href="<?php echo $product['href']; ?>" class="f14 lh20 c71">
+					<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
+		<!--		<div class="jq hs"><span class="right pt8">新品上线</span>  -->
+					<div class="hs"><span class="right pt8">新品上线</span> 
+				        <?php if (!$product['special']) { ?>
+							<span class="f14"><span class="f20"><?php echo $product['price']; ?></span>
+				        <?php } else { ?>
+							<span class="f14"><p class="f20"><?php echo $product['special']; ?></p><p  style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p></span>
+				        <?php } ?>
+				        <?php if ($product['tax']) { ?>
+				        <br />
+				        <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+				        <?php } ?>
+					</div>
+	   			</div>
+			    <div class="sp2 f14"><?php 
+					switch($product['classid']){
+						case 1:
+							echo $text_class_id_1;
+							break;
+						case 2:
+							echo $text_class_id_2;
+							break;
+						case 3:
+							echo $text_class_id_3;
+							break;
+					}
+					?>
+				</div>
+			</div>
+	  </div>
+<?php
+		}
+?>
+ 	</div>
+ <?php
+	}
+?>
 <div class="paginator">
 	<?php echo $pagination; ?>
 </div>
+<br/>
   
-  <?php } else { ?>
-	<div class="w1200 px">
+ <?php } else { ?>
+	<div class="px">
 	  <div class="left px_left">
 		<span ><?php echo $text_empty; ?></span>
 	  </div>
 	</div>
   <?php }?>
-  <?php echo $content_bottom; ?></div>
+	
+  
 <script type="text/javascript"><!--
 $('#content input[name=\'filter_name\']').keydown(function(e) {
 	if (e.keyCode == 13) {

@@ -29,7 +29,6 @@
 
   <?php if ($products) { ?>
 <div id="product_classid" style="display:none"><?php echo $columnsid; ?></div>
-<div class="w1200 px">
   <div class="left px_left">
     <span class="left lh26"><?php echo $text_sort; ?> </span>
     <ul class="pxnav left">
@@ -42,62 +41,74 @@
         <?php } ?>
     </ul>
   </div>
-</div>
 
-<div class="w1200">
-
-    <?php 
-	$i=1;
-	foreach ($products as $product) { 
-		if($i%5==0)
-		{
-			$marginRight="margin-right:0;margin-left:2px;";
-		}else
-		{
-			$marginRight="";
-		}
-	?>
+<?php
+	$col = 2;
+	$row_num = ceil(count($products)/$col);
 	
-  <div class="yjk_sp" style="<?php echo $marginRight;?>" >
-    <p class="yjk_sp_tp">
-		<a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>"><img src="<?php echo $product['thumb']; ?>" 
-		title="<?php echo $product['name']; ?>" width="207" height="207" 
-		alt="<?php echo $product['name']; ?>" /></a></p>
-    <div class="yjk_sp_wz">
-      <a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>" class="f14 lh20 c71">
-		<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
-		<div class=" hs"><span class="right pt8">新品上线</span> 
-                    <div style="float: left">
-        <?php if (!$product['special']) { ?>
-			<p class="f20" style=" width: 148px;" ><?php echo $product['price']; ?></p>
-        <?php } else { ?>
-        <p class="f20" style="  width: 148px;"><?php echo $product['special']; ?></p><p style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p>
-        <?php } ?>
-        </div>
-		</div>
-    </div>
-    <div class="sp2 f14"><?php 
-	switch($product['classid']){
-		case 1:
-			echo $text_class_id_1;
-			break;
-		case 2:
-			echo $text_class_id_2;
-			break;
-		case 3:
-			echo $text_class_id_3;
-			break;
+	$products_row_col = Array();
+	
+	for($i=0;$i<$row_num;$i++){
+		$products_row_col[$i] = Array();
+		for($k=0;$k<$col;$k++){
+			if(count($products) > $i*$col+$k){
+				$products_row_col[$i][$k] = $products[$i*$col+$k];
+			}
+		}	
 	}
-	?></div>
-
-  </div>
 	
-    <?php $i++;} ?>
-</div>
-
+	foreach ($products_row_col as $product_row) {
+?>
+ 	<div class="row">
+ 	<?php
+ 		foreach ($product_row as $product) {
+ 	?>
+		<div class="col-xs-6">
+			<div class="yjk_sp style">
+	         	<p class="yjk_sp_tp">
+					<a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" 
+					title="<?php echo $product['name']; ?>" width="207" height="207" 
+					alt="<?php echo $product['name']; ?>" /></a>
+				</p>
+			    <div class="yjk_sp_wz">
+			      <a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>" class="f14 lh20 c71">
+					<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
+					<div class=" hs"><span class="right pt8">新品上线</span> 
+			                    <div style="float: left">
+			        <?php if (!$product['special']) { ?>
+						<p class="f20" style=" width: 148px;" ><?php echo $product['price']; ?></p>
+			        <?php } else { ?>
+			        <p class="f20" style="  width: 148px;"><?php echo $product['special']; ?></p><p style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p>
+			        <?php } ?>
+			        </div>
+					</div>
+			    </div>
+			    <div class="sp2 f14"><?php 
+				switch($product['classid']){
+					case 1:
+						echo $text_class_id_1;
+						break;
+					case 2:
+						echo $text_class_id_2;
+						break;
+					case 3:
+						echo $text_class_id_3;
+						break;
+				}
+				?></div>
+			</div>	
+	    </div>
+<?php
+		}
+?>
+ 	</div>
+ <?php
+	}
+?>
 <div class="paginator">
 	<?php echo $pagination; ?>
 </div>
+<br/>
   
 <?php } else
 {

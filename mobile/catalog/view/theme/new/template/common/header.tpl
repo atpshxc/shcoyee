@@ -18,24 +18,24 @@
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
 
-<link href="catalog/view/theme/new/css/base.css" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/new/css/index.css" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/new/css/health.css" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/new/css/other.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/theme/new/css/base.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/theme/new/css/index.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/theme/new/css/health.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/theme/new/css/other.css" rel="stylesheet" type="text/css" />
 
 
-<script src="catalog/view/theme/new/js/jquery.min.js"></script>
-<script src="catalog/view/theme/new/js/jquery.flexslider-min.js"></script>
+<script src="<?php echo HTTP_SERVER?>catalog/view/theme/new/js/jquery.min.js"></script>
+<script src="<?php echo HTTP_SERVER?>catalog/view/theme/new/js/jquery.flexslider-min.js"></script>
 
-<script src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.9.custom.min.js"></script>
-<link type="text/css" href="catalog/view/javascript/jquery/ui/themes/flick/jquery-ui-1.8.16.custom.css" />
-<script src="catalog/view/javascript/jquery/ui/external/jquery.cookie.js"></script>
+<script src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ui/jquery-ui-1.8.9.custom.min.js"></script>
+<link type="text/css" href="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ui/themes/flick/jquery-ui-1.8.16.custom.css" />
+<script src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ui/external/jquery.cookie.js"></script>
 
-<script src="catalog/view/javascript/common.js"></script>
+<script src="<?php echo HTTP_SERVER?>catalog/view/javascript/common.js"></script>
 
-<link href="catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
-<script src="catalog/view/bootstrap/js/bootstrap.js"></script>
+<link href="<?php echo HTTP_SERVER?>catalog/view/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo HTTP_SERVER?>catalog/view/css/ectouch.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo HTTP_SERVER?>catalog/view/bootstrap/js/bootstrap.js"></script>
 
 <script>
 function ajaxcart(mmObj)
@@ -107,12 +107,12 @@ function removeCart(key,calssid) {
 <body>
 <!--top end-->
 <!--搜索-->
-<script type=text/javascript src="catalog/view/theme/default/kyjs20140915/lrtk.js"></script>
-<script type=text/javascript src="catalog/view/theme/default/kyjs20140915/jquery-1.4.2.min.js"></script>
+<script type=text/javascript src="<?php echo HTTP_SERVER?>catalog/view/theme/default/kyjs20140915/lrtk.js"></script>
+<script type=text/javascript src="<?php echo HTTP_SERVER?>catalog/view/theme/default/kyjs20140915/jquery-1.4.2.min.js"></script>
 
 <div class="row">
 		<div class="col-xs-12">
-			<a href="<?php echo HTTP_SERVER?>"><img class="img-responsive" src="catalog/view/theme/new/images/logo.jpg"/></a>
+			<a href="<?php echo HTTP_SERVER?>"><img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/logo.jpg"/></a>
 		</div>
 </div>
 <!--导航-->

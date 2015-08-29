@@ -1,242 +1,225 @@
 <?php echo $header; ?>
-<div id="content" class="w12002">
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
+<div id="content">
+	<!--面包屑导航-->
+	  <div class="breadcrumb">
+	    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+	    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+	    <?php } ?>
+	  </div>
+	<!--面包屑导航 END-->
   
   <!--购买产品-->
   <div class="product-info">
     <?php if ($thumb || $images) { ?>
-    <div class="left w450 dw">
-        <?php if ($thumb) { ?>
-	      <div class="image zoom-small-image" >
-	      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" id="zoom1" rel="adjustX: 10, adjustY:-4" >
-	      <img   height="450" width="450" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image"   /></a></div>
-	  	<?php } ?>
-		
-      <?php if ($images) { ?>
-	      <div class="image-additional" id="image-additional-carousel">
-		      <ul class="jcarousel-skin-opencart">
-		          <?php if($small) {?>
-		          <li>
-		      		<a class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>' " href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">
-		      			<img src="<?php echo $small; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" />
-		      		</a>
-		       	 </li>
-		       	 <?php }?>
-		        <?php foreach ($images as $image) { ?>
-		         <li>
-		        	<a class="cloud-zoom-gallery"  rel="useZoom: 'zoom1', smallImage: '<?php echo $image['middle'] ?>' " href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="" rel="">
-		        		<img src="<?php echo $image['thumb']; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
-		        	</a>
-		        </li>
-		        <?php } ?>
-		    </ul>
-       	 </div>
-      <?php } ?>
-    <?php } ?>
-	
-		<div class="sp f14">进口商品</div>
-    </div>
-    <div class="right w698">
-      <div>
-        <span class="left w698_bt"><?php echo $heading_title; ?></span>
-        <span class="right cpzx f14">产地直销 — 自贸</span>
-      </div>
-      <div class="price clear"><span class="jg">价格</span>
-        
-        <?php if (!$special) { ?>
-			<span class="hs bold f18"><span class="f32"><?php echo $price; ?></span></span><br />
-        <?php } else { ?>
-			<span class="qian2 f14"><?php echo $price; ?></span> 
-			<span class="hs bold f18"><span class="f32"><?php echo $special; ?></span></span>
-        <?php } ?>
-		
-        <?php if ($discounts) { ?>
-        <br />
-        <div class="discount">
-          <?php foreach ($discounts as $discount) { ?>
-         	 <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
-          <?php } ?>
-        </div>
-        <?php } ?>
-	  </div>
-        <?php if ($tax_money) { ?>
-		  <div class="gs clear"><span class="jg"><?php echo $text_tax_money; ?></span><?php echo $tax_money; ?> <span class="hs"><?php echo $text_tax_money_rat; ?></span></div>
-        <?php } ?>
-		
-      <div class="yh clear"><div class="left" style="padding:10px 0;"><span class="jg">优惠</span><span class="hs">《夏·狂热》免税自营全场免邮</span></div>
-        <div class="hdmx right" onmouseover="MM_over(this)" onmouseout="MM_out(this)">活动明细
-          <div style="display: none; z-index:9999;" class="hdmx_nr">
-            <p>活动介绍：</p>
-            <p>自营商品满159元包邮</p>
-            <p>活动规则：</p>
-            <p>海外直邮-蜜淘自营、蜜淘自营、免税自营商品满159元包邮</p>
-            <p>注意事项：</p>
-            <p>跨类型满足159元不可包邮，必须每种类型商品满足条件才可包邮。</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="gs"><span class="jg">运费</span>免运费 </div>
-
-      <div class="sl of"><span class="jg left lh26">数量</span>
-	  <div class="wrap-input left">
-            <a class="btn-reduce" href="javascript:;" onclick="setAmount('quantity', -1)">-</a>
-            <a class="btn-add" href="javascript:;" onclick="setAmount('quantity', 1)">+</a>
-            <input type="text" id="quantity" value="1">
-			  <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-        </div>
-        <a href="tencent://message/?menu=yes&amp;site=可益健康&amp;uin=10000"  class="lxkf left">联系客服</a>
-      </div>
-	  
-<script language="javascript">          
-	function setAmount(element,value) { 
-		var quantity = document.getElementById(element);
-		var orgValue = quantity.value;
-		quantity.value = parseInt(orgValue) +  parseInt(value);
-	}
-</script>
-
-      <div class="yh pd26 clear">
-        <a rel="nofollow" id="button-cart" style="cursor: pointer;"><span><?php echo $button_cart; ?></span></a>
-        <a rel="nofollow" style="cursor: pointer;" onclick="addToWishList('<?php echo $product_id; ?>');"><?php echo $button_wishlist; ?></a> 
-      </div>
-
-<script src="catalog/view/javascript/product.js"></script>
-      <div class="gs of"><span class="jg left lh23">分享</span>
-<!--        <a onclick="shareTSina('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/wx_tb.jpg" width="20" height="20" /></a> -->
-        <a onclick="shareTSina('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/xl_tb.jpg" width="20" height="20" /></a>
-        <a onclick="shareToWb('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/tx_tb.jpg" width="20" height="20" /></a>
-        <a onclick="shareQzone('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/kj_tb.jpg" width="20" height="20" /></a>
-        <a onclick="shareRR('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/rrw.jpg" width="20" height="20" /></a>
-        <a onclick="shareToDouBan('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/db.jpg" width="20" height="20" /></a>
-<!--        <a onclick="shareToDouBan('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="catalog/view/theme/new/images/mls.jpg" width="20" height="20" /></a> -->
-      </div>
-
-
-	  </div>
-  </div>
-  <!--购买产品 end-->
-
-  <!--热门商品推荐 修改为 新品推荐-->
-  <div class="w1200">
-    <p class="rm_bt f18 hs">新品推荐</p>
-    <div class="rm">
-      <ul>
-          <?php foreach ($popular_products as $popular_product) { ?>
-			<li>
-			  <p><a  target="_blank"  href="<?php echo $popular_product['href']; ?>"><img src="<?php echo $popular_product['thumb']; ?>" width="207" height="207" /></a></p>
-			  <p class="pt10" style="height: 40px;"><a  target="_blank"  href="<?php echo $popular_product['href']; ?>"><span ></span><?php echo $popular_product['name']; ?></a></p>
-			  <p class="hs f14w"><?php echo $popular_product['price']; ?></p>
-			</li>
-          <?php } ?>
-      </ul>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <!--热门商品推荐 end-->
-  
-  <!--商品详情-->
-  <div class="pt15">
-    <div class="left w840">
-      <div class="w840_top">
-        <ul id="tab-menu0" class="xq">
-          <li ><a class="hover3" onclick="switchMenustyle(0,0)" href="javascript:void(0);">商品详情</a></li>
-  <!-- <li><a id="xqnav2" onclick="switchMenustyle(2)" href="javascript:void(0);">购买须知</a></li> -->
-          <li><a onclick="switchMenustyle(0,1)" href="javascript:void(0);"><?php echo $tab_review; ?></a></li>
-        </ul>
-			<script language="javascript">          
-				function switchMenustyle(m,n) { 
-					var tli=document.getElementById("tab-menu"+m).getElementsByTagName("li"); 
-					var mli=document.getElementById("tab-main"+m).getElementsByTagName("ul"); 
-					for(i=0;i<tli.length;i++){ 
-						var tli_a = tli[i].getElementsByTagName('a')[0];
-						tli_a.className=i==n?"hover3":""; 
-					   mli[i].style.display=i==n?"block":"none";
-					}
-				}
-			</script>
-			<div class="right f16 hs">
-			  <a class="jrgwc right" rel="nofollow" id="button-cart-second" style="cursor: pointer;"><span><?php echo $button_cart; ?></span></a>
-			<?php if (!$special) { ?>
-				  <span class="bold"><span class="f24" style="line-height:57px;"><?php echo $price; ?></span> </span>
-			<?php } else { ?>
-				  <span class="bold"><span class="f24" style="line-height:57px;"><?php echo $special; ?></span> </span>
-			<?php } ?>
-		  </div>
-      </div>
-      <div id="tab-main0" class="xq_nr">
-        <ul>
-          <li>
-				<p>商品名称：<?php echo $heading_title; ?></p>
-				<p>商品编号：<?php echo $model; ?></p>
-				<p>上架时间：<?php echo $date_added; ?></p>
-		<!--        <p>商品产地：韩国</p> -->
-				<p><?php echo $description; ?></p>
-		  </li>
-        </ul>
-          <ul style="display: none;"><li>
-				  <?php if ($review_status) { ?>
-				  <div id="tab-review" class="tab-content">
-					<div id="review"></div>
-					<?php if($purchased_status){?>
-					<h2 id="review-title"><?php echo $text_write; ?></h2>
-					<input type="hidden" name="name" value="<?php echo $customer_name;?>" />
-					<b><?php echo $entry_review; ?></b>
-					<textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
-					<span style="font-size: 11px;"><?php echo $text_note; ?></span><br />
-					<br />
-					<b><?php echo $entry_rating; ?></b> <span><?php echo $entry_bad; ?></span>&nbsp;
-					<input type="radio" name="rating" value="1" />
-					&nbsp;
-					<input type="radio" name="rating" value="2" />
-					&nbsp;
-					<input type="radio" name="rating" value="3" />
-					&nbsp;
-					<input type="radio" name="rating" value="4" />
-					&nbsp;
-					<input type="radio" name="rating" value="5" />
-					&nbsp; <span><?php echo $entry_good; ?></span><br />
-					<br />
-					<div class="captcha">
-					<b><?php echo $entry_captcha; ?></b><br />
-					<input type="text" name="captcha" value="" />
+	    <div class="row">
+	    	<div class="col-xs-12">
+	    	 	<div class="left w450 dw">
+		    		 <?php if ($thumb) { ?>
+				      <div class="image zoom-small-image" >
+				      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" id="zoom1" rel="adjustX: 10, adjustY:-4" >
+				      <img class="img-responsive" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image"   /></a>
+				      </div>
+				  	<?php } ?>
+				  	
+				  	<?php if ($images) { ?>
+					      <div class="image-additional" id="image-additional-carousel">
+						      <ul class="jcarousel-skin-opencart">
+						          <?php if($small) {?>
+						          <li>
+						      		<a class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>' " href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">
+						      			<img src="<?php echo $small; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" />
+						      		</a>
+						       	 </li>
+						       	 <?php }?>
+						        <?php foreach ($images as $image) { ?>
+						         <li>
+						        	<a class="cloud-zoom-gallery"  rel="useZoom: 'zoom1', smallImage: '<?php echo $image['middle'] ?>' " href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="" rel="">
+						        		<img src="<?php echo $image['thumb']; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+						        	</a>
+						        </li>
+						        <?php } ?>
+						    </ul>
+				       	 </div>
+				      <?php } ?>
+				      
+						<div class="sp f14">进口商品</div>
+				<!-- end left w450 dw -->
+				</div>
+			<!-- end col-xs-12 -->
+	    	</div>
+	    <!-- end row -->
+	    </div>
+   	<?php } ?>
+   	
+    <div class="row">
+    	<div class="col-xs-12">
+		      <div>
+		        <span class="left w698_bt"><?php echo $heading_title; ?></span>
+		        <!--<span class="right cpzx f14">产地直销 — 自贸</span>-->
+		      </div>
+		      
+		      <div class="price clear">
+			      	<span class="jg">价格</span>
+			        
+			        <?php if (!$special) { ?>
+						<span class="hs bold f18"><span class="f32"><?php echo $price; ?></span></span><br />
+			        <?php } else { ?>
+						<span class="qian2 f14"><?php echo $price; ?></span> 
+						<span class="hs bold f18"><span class="f32"><?php echo $special; ?></span></span>
+			        <?php } ?>
 					
-					<img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
-					</div>
-					<br />
-					<div class="left"><a id="button-review" class="button"><span><?php echo $button_review; ?></span></a></div>
-					<?php } else {?>
-					   <?php echo $text_login_review; ?>
-					 <?php } ?>
-				  </div>
-				  <?php } ?>
-		  </li></ul>
-      </div>
+			        <?php if ($discounts) { ?>
+			        <br />
+			        <div class="discount">
+			          <?php foreach ($discounts as $discount) { ?>
+			         	 <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
+			          <?php } ?>
+			        </div>
+			        <?php } ?>
+		      <!--END price clear-->
+			  </div>
+			  
+		        <?php if ($tax_money) { ?>
+				  <div class="gs clear"><span class="jg"><?php echo $text_tax_money; ?></span><?php echo $tax_money; ?> <span class="hs"><?php echo $text_tax_money_rat; ?></span></div>
+		        <?php } ?>
+				
+		      <div class="yh clear">
+		      	<div class="left" style="padding:10px 0;"><span class="jg">优惠</span><span class="hs">《夏·狂热》免税自营全场免邮</span></div>
+		        <div class="clear"></div>
+		      </div>
+		      
+		      <div class="gs"><span class="jg">运费</span>免运费 </div>
+		
+		      <div class="sl of"><span class="jg left lh26">数量</span>
+			  	<div class="wrap-input left">
+		            <a class="btn-reduce" href="javascript:;" onclick="setAmount('quantity', -1)">-</a>
+		            <a class="btn-add" href="javascript:;" onclick="setAmount('quantity', 1)">+</a>
+		            <input type="text" id="quantity" value="1">
+					  <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
+		        </div>
+		        <a href="tencent://message/?menu=yes&amp;site=可益健康&amp;uin=10000"  class="lxkf left">联系客服</a>
+		      </div>
+			  
+		<script language="javascript">          
+			function setAmount(element,value) { 
+				var quantity = document.getElementById(element);
+				var orgValue = quantity.value;
+				quantity.value = parseInt(orgValue) +  parseInt(value);
+			}
+		</script>
+		
+		      <div class="yh pd26 clear">
+		        <a rel="nofollow" id="button-cart" style="cursor: pointer;"><span><?php echo $button_cart; ?></span></a>
+		        <a rel="nofollow" style="cursor: pointer;" onclick="addToWishList('<?php echo $product_id; ?>');"><?php echo $button_wishlist; ?></a> 
+		      </div>
+		
+		<script src="<?php echo HTTP_SERVER?>catalog/view/javascript/product.js"></script>
+		      <div class="gs of"><span class="jg left lh23">分享</span>
+		<!--        <a onclick="shareTSina('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/wx_tb.jpg" width="20" height="20" /></a> -->
+		        <a onclick="shareTSina('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/xl_tb.jpg" width="20" height="20" /></a>
+		        <a onclick="shareToWb('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/tx_tb.jpg" width="20" height="20" /></a>
+		        <a onclick="shareQzone('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/kj_tb.jpg" width="20" height="20" /></a>
+		        <a onclick="shareRR('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/rrw.jpg" width="20" height="20" /></a>
+		        <a onclick="shareToDouBan('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/db.jpg" width="20" height="20" /></a>
+		<!--        <a onclick="shareToDouBan('<?php echo $heading_title; ?>', '<?php echo $share_link; ?>');" style="cursor: pointer;" class="fx"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/mls.jpg" width="20" height="20" /></a> -->
+		
+			  </div>
+		<!--END col-xs-12 -->
+    	</div>
+    <!--END row-->
     </div>
-	
-	
-    <div class="right w334">
-      <p class="hs f18">热卖商品</p>
-      <div class="rmsp">
-		<?php foreach ($best_seller_products as $best_seller) { ?>
-        <div class="rmsp_nr of">
-          <div class="left"><a  target="_blank"  href="<?php echo $best_seller['href']; ?>"><img src="<?php echo $best_seller['thumb']; ?>" width="100" height="100" /></a></div>
-          <div class="left w194 lh20">
-            <p><a  target="_blank"  href="<?php echo $best_seller['href']; ?>"><?php echo $best_seller['name']; ?></a></p>
-            <p class="hs f14 pt8"><?php echo $best_seller['price']; ?></p>
-          </div>
-        </div>
-		<?php } ?>
-      </div>
-    </div>
-  </div>
-  <!--商品详情 end-->
-  <div class="clear"></div>
-
+    
+    <div class="row">
+    	<div class="col-xs-12">
+    		<!--商品详情-->
+			  <div class="pt15">
+			    <div class="left w840">
+			      <div class="w840_top">
+			        <ul id="tab-menu0" class="xq">
+			          <li ><a class="hover3" onclick="switchMenustyle(0,0)" href="javascript:void(0);">商品详情</a></li>
+			  <!-- <li><a id="xqnav2" onclick="switchMenustyle(2)" href="javascript:void(0);">购买须知</a></li> -->
+			          <li><a onclick="switchMenustyle(0,1)" href="javascript:void(0);"><?php echo $tab_review; ?></a></li>
+			        </ul>
+						<script language="javascript">          
+							function switchMenustyle(m,n) { 
+								var tli=document.getElementById("tab-menu"+m).getElementsByTagName("li"); 
+								var mli=document.getElementById("tab-main"+m).getElementsByTagName("ul"); 
+								for(i=0;i<tli.length;i++){ 
+									var tli_a = tli[i].getElementsByTagName('a')[0];
+									tli_a.className=i==n?"hover3":""; 
+								   mli[i].style.display=i==n?"block":"none";
+								}
+							}
+						</script>
+				  <!--END w840_top-->
+			      </div>
+			      <div id="tab-main0" class="xq_nr">
+			        <ul>
+			          <li>
+							<p>商品名称：<?php echo $heading_title; ?></p>
+							<p>商品编号：<?php echo $model; ?></p>
+							<p>上架时间：<?php echo $date_added; ?></p>
+					<!--        <p>商品产地：韩国</p> -->
+							<p><?php echo $description; ?></p>
+					  </li>
+			        </ul>
+			        <ul style="display: none;">
+			        	<li>
+							  <?php if ($review_status) { ?>
+							  <div id="tab-review" class="tab-content">
+								<div id="review"></div>
+								<?php if($purchased_status){?>
+								<h2 id="review-title"><?php echo $text_write; ?></h2>
+								<input type="hidden" name="name" value="<?php echo $customer_name;?>" />
+								<b><?php echo $entry_review; ?></b>
+								<textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
+								<span style="font-size: 11px;"><?php echo $text_note; ?></span><br />
+								<br />
+								<b><?php echo $entry_rating; ?></b> <span><?php echo $entry_bad; ?></span>&nbsp;
+								<input type="radio" name="rating" value="1" />
+								&nbsp;
+								<input type="radio" name="rating" value="2" />
+								&nbsp;
+								<input type="radio" name="rating" value="3" />
+								&nbsp;
+								<input type="radio" name="rating" value="4" />
+								&nbsp;
+								<input type="radio" name="rating" value="5" />
+								&nbsp; <span><?php echo $entry_good; ?></span><br />
+								<br />
+								<div class="captcha">
+								<b><?php echo $entry_captcha; ?></b><br />
+								<input type="text" name="captcha" value="" />
+								
+								<img src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+								</div>
+								<br />
+								<div class="left"><a id="button-review" class="button"><span><?php echo $button_review; ?></span></a></div>
+								<?php } else {?>
+								   <?php echo $text_login_review; ?>
+								 <?php } ?>
+							  </div>
+							  <?php } ?>
+					 	 </li>
+					</ul>
+				  <!--END xq_nr-->
+			      </div>
+			    <!--END left w840-->
+			    </div>
+			  <!--END pt15 -->
+			  </div>
+			  <!--商品详情 end-->
+			<!--END col-xs-12 -->
+	    	</div>
+	    <!--END row -->
+	    </div>
+	<!--END product-info -->
+	</div>
+<!--END w12002 -->
+</div>
+   	
+  
+<br/><br/><br/>
   <!--
   <div id="tabs" class="htabs"><a href="#tab-description"><?php echo $tab_description; ?></a>
     <?php if ($attribute_groups) { ?>
@@ -297,7 +280,7 @@
     <b><?php echo $entry_captcha; ?></b><br />
     <input type="text" name="captcha" value="" />
     
-    <img src="index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+    <img src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
     </div>
     <br />
     <div class="left"><a id="button-review" class="button"><span><?php echo $button_review; ?></span></a></div>
@@ -333,7 +316,7 @@ $('#button-cart').bind('click', function() {
 			
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 				
 					$('.warning').fadeIn('slow');
 				}
@@ -344,7 +327,7 @@ $('#button-cart').bind('click', function() {
 			}	 
 						
 			if (json['success']) {
-				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
 				$('.attention').fadeIn('slow');
 					
@@ -367,7 +350,7 @@ $('#button-cart-second').bind('click', function() {
 			
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 				
 					$('.warning').fadeIn('slow');
 				}
@@ -378,7 +361,7 @@ $('#button-cart-second').bind('click', function() {
 			}	 
 						
 			if (json['success']) {
-				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
 				$('.attention').fadeIn('slow');
 					
@@ -392,7 +375,7 @@ $('#button-cart-second').bind('click', function() {
 //--></script>
 
 <?php if ($options) { ?>
-<script type="text/javascript" src="catalog/view/javascript/jquery/ajaxupload.js"></script>
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ajaxupload.js"></script>
 <?php foreach ($options as $option) { ?>
 <?php if ($option['type'] == 'file') { ?>
 <script type="text/javascript"><!--
@@ -403,7 +386,7 @@ new AjaxUpload('#button-option-<?php echo $option['product_option_id']; ?>', {
 	autoSubmit: true,
 	responseType: 'json',
 	onSubmit: function(file, extension) {
-		$('#button-option-<?php echo $option['product_option_id']; ?>').after('<img src="catalog/view/theme/default/image/loading.gif" id="loading" style="padding-left: 5px;" />');
+		$('#button-option-<?php echo $option['product_option_id']; ?>').after('<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" id="loading" style="padding-left: 5px;" />');
 	},
 	onComplete: function(file, json) {
 		$('.error').remove();
@@ -449,7 +432,7 @@ $('#button-review').bind('click', function() {
 		beforeSend: function() {
 			$('.success, .warning').remove();
 			$('#button-review').attr('disabled', true);
-			$('#review-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
+			$('#review-title').after('<div class="attention"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
 		},
 		complete: function() {
 			$('#button-review').attr('disabled', false);
@@ -472,17 +455,17 @@ $('#button-review').bind('click', function() {
 	});
 });
 //--></script> 
-<script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/tabs.js"></script>
 <script type="text/javascript"><!--
 $('#tabs a').tabs();
 //--></script>
 
-<script type="text/javascript" src="catalog/view/javascript/jquery/jquery.ae.image.resize.min.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/jquery/cloud-zoom.1.0.2.min.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/cloud-zoom.css" media="screen" />
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/jquery.ae.image.resize.min.js"></script>
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/cloud-zoom.1.0.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/cloud-zoom.css" media="screen" />
 
-<script type="text/javascript" src="catalog/view/javascript/jquery/jquery.jcarousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/carousel.css" media="screen" />
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo HTTP_SERVER?>catalog/view/theme/default/stylesheet/carousel.css" media="screen" />
 
 
 <script type="text/javascript">
@@ -502,8 +485,8 @@ $('#related-jcarousel ul').jcarousel({
 </script>
 
 
-<script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/jquery/ui/i18n/jquery-ui-i18n.js"></script> 
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/jquery/ui/i18n/jquery-ui-i18n.js"></script> 
 
 <script type="text/javascript"><!--
 $(document).ready(function(){
