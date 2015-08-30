@@ -90,7 +90,6 @@ class ControllerAccountInvite extends Controller {
 		} else {
 			$this->template = 'default/template/account/invite.tpl';
 		}
-		
 		$this->children = array(
 			'common/column_left',
 			'common/column_right',
