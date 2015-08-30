@@ -7,11 +7,10 @@
 
   <!--帮助中心-->
 <div class="bg">
-  <div class="w1200 pt15">
     <div class="left w150">
        <?php echo $column_left; ?>
     </div>
-    <div class="right w1028">
+    <div class="right w1028" style="width:70%;margin-bottom:60px;">
       <p class="w1028_bt bold"><?php echo $heading_title; ?></p>
       
       
@@ -38,9 +37,9 @@
     <div class="content">
     	<table class="form">
       	<tr>
-          <td><?php echo $entry_invite; ?></td>
+          <!--<td><?php echo $entry_invite; ?></td>-->
           <td>
-              <input type="text" size="50" value="<?php echo $invite; ?>" name="link"  class=" input01">
+              <input type="text" size="30" value="<?php echo $invite; ?>" name="link"  class=" input01">
               <input type="hidden" value="<?php echo $invite; ?>" name="sns" id="sns" >
           </td>
           <td>	
@@ -52,12 +51,14 @@
    		
        </table>
 	</div>
-    <script type="text/javascript" src="catalog/view/javascript/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="<?php echo HTTP_SERVER?>catalog/view/javascript/ZeroClipboard.js"></script>
 
     <script type="text/javascript">
 
+			ZeroClipboard.setMoviePath("<?php echo HTTP_SERVER?>"+ZeroClipboard.moviePath);
+			
 			clip = new ZeroClipboard.Client();
-
+			
 			clip.setHandCursor(true); // 设置鼠标为手型
 			
 			clip.setText(document.getElementById('sns').value);
@@ -99,7 +100,6 @@
   
   
     </div>
-  </div>
 </div>
   
   

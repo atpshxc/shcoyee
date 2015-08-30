@@ -112,18 +112,20 @@ function removeCart(key,calssid) {
 
 <div class="row">
 		<div class="col-xs-12">
-			<a href="<?php echo HTTP_SERVER?>"><img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/logo.jpg"/></a>
+			<a href="<?php echo HTTP_SERVER?>"><img style="width:100%" class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/new/images/logo.jpg"/></a>
 		</div>
 </div>
 <!--导航-->
-<div class="row dh">
+<div class="row">
 	<div class="col-xs-12">
-	    <div class="inline meau">
-	      <ul>
-	        <li><a class="hover" id="mynav1" onclick="switchMenustyle(1)" href="<?php echo HTTP_SERVER?>">首页</a></li>
-	        <li><a id="mynav2" onclick="switchMenustyle(2)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=1">益健康</a></li>
-	        <li><a id="mynav3" onclick="switchMenustyle(3)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=2">益生活</a></li>
-	      </ul>
+		<div class="dh">
+		    <div class="inline meau">
+		      <ul>
+		        <!--<li><a class="hover" id="mynav1" onclick="switchMenustyle(1)" href="<?php echo HTTP_SERVER?>">首页</a></li>-->
+		        <li><a id="mynav2" onclick="switchMenustyle(2)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=1">益健康</a></li>
+		        <li><a id="mynav3" onclick="switchMenustyle(3)" href="<?php echo HTTP_SERVER?>/index.php?route=product/category&path=0&columnsid=2">益生活</a></li>
+		      </ul>
+		    </div>
 	    </div>
 	</div>
 </div>

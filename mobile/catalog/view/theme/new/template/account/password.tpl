@@ -9,11 +9,10 @@
 
   <!--帮助中心-->
 <div class="bg">
-  <div class="w1200 pt15">
     <div class="left w150">
        <?php echo $column_left; ?>
     </div>
-    <div class="right w1028">
+    <div class="right w1028" style="width:70%;margin-bottom:60px;">
       <p class="w1028_bt bold"><?php echo $heading_title; ?></p>
       
       
@@ -57,7 +56,6 @@
   
   
     </div>
-  </div>
 </div>
   
   

@@ -245,7 +245,7 @@ class ControllerProductCategory extends Controller {
 				'value' => 'p.sort_order-ASC',
 				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&columnsid=' . $columnsid . '&sort=p.sort_order&order=ASC' . $url)
 			);
-			
+			/*
 			$this->data['sorts'][] = array(
 				'text'  => $this->language->get('text_rating_desc'),
 				'value' => 'rating-DESC',
@@ -256,6 +256,17 @@ class ControllerProductCategory extends Controller {
 				'text'  => $this->language->get('text_price_desc'),
 				'value' => 'p.price-DESC',
 				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&columnsid=' . $columnsid . '&sort=p.price&order=DESC' . $url)
+			); 	*/ 
+			//print_r($this->language);
+			$this->data['sorts'][] = array(
+				'text'  => $this->language->get('text_best_seller_desc'),
+				'value' => 'p.text_best_seller_desc-DESC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&columnsid=' . $columnsid . '&sort=p.text_best_seller_desc&order=DESC' . $url)
+			); 
+			$this->data['sorts'][] = array(
+				'text'  => $this->language->get('text_date_add_desc'),
+				'value' => 'p.date_add-DESC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&columnsid=' . $columnsid . '&sort=p.date_add&order=DESC' . $url)
 			); 
 
 			$url = '';

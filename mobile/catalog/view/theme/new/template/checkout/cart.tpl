@@ -116,7 +116,7 @@
 		<div class="col-xs-12">
 			<p class="text-right">
 				<a href="#" style="display:none" class="right inblock btn_checkout_disabled"></a> 
-		         <a href="/index.php?route=checkout/checkout" class="right inblock inblock btn_checkout"></a>
+		         <a href="<?php echo HTTP_SERVER?>/index.php?route=checkout/checkout" class="right inblock inblock btn_checkout"></a>
 		    </p> 
 		</div>
 	</div>  
@@ -128,12 +128,7 @@
      ?>
      <div class="f24 hs2 pt15"><i class="wdgwc_bt"></i>我的购物车</div>
      <div class="f24 hs2 pt15"></div>
- 
-     <div style="border: 1px solid #f0f0f0; background: white; margin-top: 25px; box-shadow: 0px 2px 0px #fbfbfb; width: 980px; margin: auto; overflow: auto;">
-         <div class="left px_left" style="padding: 9px 14px;">
-		<span>您的购物车没有添加商品!</span>
-	  </div>   
-     </div>
+ 	 <div class="alert alert-info"><span>您的购物车没有添加商品!</span></div>
          <?php
    }
      ?> 

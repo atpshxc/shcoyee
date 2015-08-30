@@ -9,11 +9,10 @@
 
   <!--帮助中心-->
 <div class="bg">
-  <div class="w1200 pt15">
     <div class="left w150">
        <?php echo $column_left; ?>
     </div>
-    <div class="right w1028">
+    <div class="right w1028" style="width:70%;margin-bottom:60px;">
       <p class="w1028_bt bold"><?php echo $heading_title; ?></p>
       
       
@@ -28,22 +27,22 @@
           <td><span class="required hs">*</span> <?php echo $entry_firstname; ?></td>
           <td><input type="text" name="firstname" value="<?php echo $firstname; ?>"  class=" input01"/>
             <?php if ($error_firstname) { ?>
-            <span class="error"><?php echo $error_firstname; ?></span>
+            <p class="text-danger"><span class="error"><?php echo $error_firstname; ?></span></p>
             <?php } ?></td>
         </tr>
      <tr>
           <td><span class="required hs">*</span> <?php echo $entry_zone; ?></td>
-          <td><select name="zone_id"  onchange="$('select[name=\'city_id\']').load('index.php?route=common/localisation/city&zone_id=' + this.value);" class=" input01">
+          <td><select name="zone_id"  onchange="$('select[name=\'city_id\']').load('index.php?route=common/localisation/city&zone_id=' + this.value);" style="line-height:20px;" class=" input01">
             </select>
             <?php if ($error_zone) { ?>
-            <span class="error"><?php echo $error_zone; ?></span>
+            <p class="text-danger"><span class="error"><?php echo $error_zone; ?></span></p>
             <?php } ?></td>
         </tr>
          <tr>
 	      <td><span class="required hs">*</span> <?php echo $entry_city; ?></td>
-	      <td><select name="city_id" class="middle-field input01"> </select>
+	      <td><select name="city_id" class="middle-field input01" style="line-height:20px;"> </select>
 		      <?php if ($error_city) { ?>
-	            <span class="error"><?php echo $error_city; ?></span>
+	            <p class="text-danger"><span class="error"><?php echo $error_city; ?></span></p>
 	          <?php } ?>
 	       </td>
 	    </tr>
@@ -51,7 +50,7 @@
           <td><span class="required hs">*</span> <?php echo $entry_address_1; ?></td>
           <td><input type="text" name="address_1" value="<?php echo $address_1; ?>" class=" input01" />
             <?php if ($error_address_1) { ?>
-            <span class="error"><?php echo $error_address_1; ?></span>
+            <p class="text-danger"><span class="error"><?php echo $error_address_1; ?></span></p>
             <?php } ?></td>
         </tr>
         <tr>
@@ -62,14 +61,14 @@
           <td><span class="required hs">*</span> <?php echo $entry_postcode; ?></td>
           <td><input type="text" name="postcode" value="<?php echo $postcode; ?>"  class=" input01"/>
             <?php if ($error_postcode) { ?>
-            <span class="error"><?php echo $error_postcode; ?></span>
+            <p class="text-danger"><span class="error"><?php echo $error_postcode; ?></span></p>
             <?php } ?></td>
         </tr>
         <tr>
           <td><span class="required hs">*</span> <?php echo $entry_mobile; ?></td>
           <td><input type="text" name="mobile" value="<?php echo $mobile; ?>"  class=" input01"/>
             <?php if ($error_mobile) { ?>
-            <span class="error"><?php echo $error_mobile; ?></span>
+            <p class="text-danger"><span class="error"><?php echo $error_mobile; ?></span></p>
             <?php } ?></td>
         </tr>
         <tr>
@@ -106,7 +105,6 @@
   
   
     </div>
-  </div>
 </div>
   
   

@@ -1,6 +1,7 @@
 <?php echo $header; ?><?php echo $column_right; ?>
 
 <!--益健康 hot-->
+<!--
 <?php if ($special_products) { 
 	$hot_product = $special_products[0];
 ?>
@@ -24,24 +25,25 @@
 </div>
 
 <?php } ?>
-
+-->
 <!--益健康 hot end-->
 
   <?php if ($products) { ?>
 <div id="product_classid" style="display:none"><?php echo $columnsid; ?></div>
-  <div class="left px_left">
-    <span class="left lh26"><?php echo $text_sort; ?> </span>
-    <ul class="pxnav left">
-        <?php foreach ($sorts as $sorts) { ?>
-        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-			<li><a class="hover2" id="pxnav1" href="<?php echo $sorts['href'].'&class='.$classid; ?>"><?php echo $sorts['text']; ?></a></li>
-        <?php } else { ?>
-			<li><a id="pxnav2" href="<?php echo $sorts['href'].'&class='.$classid; ?>"><?php echo $sorts['text']; ?></a></li>
-        <?php } ?>
-        <?php } ?>
-    </ul>
-  </div>
-
+	<div class="row">
+	  <div class="left px_left">
+	    <span class="left lh26"><?php echo $text_sort; ?> </span>
+	    <ul class="pxnav left">
+	        <?php foreach ($sorts as $sorts) { ?>
+	        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+				<li><a class="hover2" id="pxnav1" href="<?php echo $sorts['href'].'&class='.$classid; ?>"><?php echo $sorts['text']; ?></a></li>
+	        <?php } else { ?>
+				<li><a id="pxnav2" href="<?php echo $sorts['href'].'&class='.$classid; ?>"><?php echo $sorts['text']; ?></a></li>
+	        <?php } ?>
+	        <?php } ?>
+	    </ul>
+	  </div>
+	</div>
 <?php
 	$col = 2;
 	$row_num = ceil(count($products)/$col);

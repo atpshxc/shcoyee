@@ -7,7 +7,7 @@
   </div>
   <div class="row">
   	<div class="col-xs-3">
-  		 <select id="filter_category_id" style="width:110%">
+  		 <select id="filter_category_id">
 					<option value="0"><?php echo $text_category; ?></option>
 					<?php foreach ($categories as $category_1) { ?>
 					<?php if ($category_1['category_id'] == $filter_category_id) { ?>
@@ -32,15 +32,17 @@
 					<?php } ?>
 			</select>
   	</div>
-  	<div class="col-xs-5 col-xs-offset-1">
-  		<?php if ($filter_name) { ?>
-			  <input class="input-sm" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
-			  <?php } else { ?>
-			  <input class="input-sm" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
-			  <?php } ?>
-  	</div>
-  	<div class="col-xs-1">
-	  		<button id="button-search" type="button" class="btn">搜索</button>
+  	<div class="col-xs-7 col-xs-offset-2">
+			  <div class="input-group  col-xs-15">
+               <?php if ($filter_name) { ?>
+					  <input class="form-control" placeholder="Search" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
+					  <?php } else { ?>
+					  <input class="form-control" placeholder="Search" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
+				<?php } ?>
+               <span class="input-group-btn">
+                  <button id="button-search" class="btn btn-default" type="button" style="height:34px;">搜索</button>
+               </span>
+            </div>
   	</div>
   </div>
 		

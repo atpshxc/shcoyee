@@ -97,7 +97,7 @@
 		            <input type="text" id="quantity" value="1">
 					  <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
 		        </div>
-		        <a href="tencent://message/?menu=yes&amp;site=可益健康&amp;uin=10000"  class="lxkf left">联系客服</a>
+		        <!--<a href="tencent://message/?menu=yes&amp;site=可益健康&amp;uin=10000"  class="lxkf left">联系客服</a>-->
 		      </div>
 			  
 		<script language="javascript">          
@@ -325,16 +325,15 @@ $('#button-cart').bind('click', function() {
 					$('#option-' + i).after('<span class="error">' + json['error'][i] + '</span>');
 				}
 			}	 
-						
 			if (json['success']) {
 				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
 				$('.attention').fadeIn('slow');
 					
-				$('#cart_total').html(json['total']);
 				$('#cart_total_bottom_menu').html(json['total'].match(/^\d*/));
+				//$('#cart_total').html(json['total']);
 				
-				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
+				//$('html, body').animate({ scrollTop: 0 }, 'slow'); 
 			}	
 		}
 	});

@@ -3,11 +3,10 @@
 
   <!--帮助中心-->
 <div class="bg">
-  <div class="w1200 pt15">
     <div class="left w150">
        <?php echo $column_left; ?>
     </div>
-    <div class="right w1028">
+    <div class="right w1028" style="width:70%;margin-bottom:60px;">
       <p class="w1028_bt bold"><?php echo $heading_title; ?></p>
       
       
@@ -25,7 +24,7 @@
   <div class="content">
     <table style="width: 100%; line-height: 30px">
       <tr>
-        <td><?php echo $result['address']; ?></td>
+        <td style="width: 75%;"><p><?php echo $result['address']; ?></p></td>
         <td style="text-align: right;"><a href="<?php echo $result['update']; ?>" class="button sc_a"><span><?php echo $button_edit; ?></span></a> &nbsp; <a href="<?php echo $result['delete']; ?>" class="button sc_a"><span><?php echo $button_delete; ?></span></a></td>
       </tr>
     </table>
@@ -35,7 +34,6 @@
   
   
     </div>
-  </div>
 </div>
   
   

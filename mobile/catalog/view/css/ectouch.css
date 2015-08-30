@@ -37,7 +37,7 @@ a:active,
 a:hover,
 a:visited { color: #555; text-decoration: none; }
 a[type=button] { color: #fff !important; }
-input[type=text],
+input[type=password],input[type=text],
 textarea { border-radius: 5px; border: 1px solid #e3e3e3; background: #fff; -webkit-appearance: none; }
 @media only screen and (max-width:310px) and (min-width:300px) {
 body { font-size: 10px }

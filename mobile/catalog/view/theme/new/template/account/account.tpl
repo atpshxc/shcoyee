@@ -7,11 +7,10 @@
 
   <!--帮助中心-->
 <div class="bg">
-  <div class="w1200 pt15">
     <div class="left w150">
        <?php echo $column_left; ?>
     </div>
-    <div class="right w1028">
+    <div class="right w1028" style="width:70%;">
       <p class="w1028_bt bold"><?php echo $display_name;?></p>
       
 
@@ -19,7 +18,7 @@
   <div class="success"><?php echo $success; ?></div>
   <?php } ?>
   <div class="content account-info" style=" border-bottom: 1px solid #e7e7e7; margin-bottom: 10px; margin-top: 10px;">
-    <div id="remind" style="margin-bottom: 10px; ">
+    <div id="remind" style="margin-bottom: 60px; ">
             <div class="oinfo">
                 <dl>
                     <dt class=" bold"><?php echo $text_transaction_total?>：<span class="red"><?php echo $total;?></span></dt>
@@ -74,7 +73,6 @@
   
   
     </div>
-  </div>
 </div>
   
   
