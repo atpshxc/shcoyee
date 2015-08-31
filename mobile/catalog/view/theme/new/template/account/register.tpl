@@ -10,7 +10,7 @@
     <div class="f18 pt20">新用户注册</div>
     <div class="bg_bs mt10 of">
            <form class="form-horizontal" role="form" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="register">
-           		 <div class="form-group">
+           		 <div class="form-group" style="margin-left:0px;margin-right:0px">
 				      <label for="email" class="col-xs-3 control-label" style="line-height:52px;">电子邮箱：</label>
 				      <div class="col-xs-9">
 				         <input type="text" class="dl_input" name="email"  value="<?php if($email) echo $email;?>"
@@ -18,21 +18,21 @@
 				         <?php if ($error_email) { ?><div style="color:red; height: 30px; padding-left: 20px;"><span class="error"><?php echo $error_email; ?></span></div><?php } ?>
 				      </div>
 			  	</div>
-           		 <div class="form-group">
+           		 <div class="form-group" style="margin-left:0px;margin-right:0px">
 				      <label for="password" class="col-xs-3 control-label" style="line-height:52px;">输入密码：</label>
 				      <div class="col-xs-9">
 				         <input type="password" name="password" value="<?php echo $password; ?>" class="dl_input">
 				         <?php if ($error_password) { ?><div style="color:red; height: 30px; padding-left: 20px;"><span class="error"><?php echo $error_password; ?></span></div><?php } ?>
 				      </div>
 			  	</div>
-           		 <div class="form-group">
+           		 <div class="form-group" style="margin-left:0px;margin-right:0px">
 				      <label for="confirm" class="col-xs-3 control-label" style="line-height:52px;">确认密码：</label>
 				      <div class="col-xs-9">
 				         <input type="password" name="confirm" value="<?php echo $confirm; ?>" class="dl_input"  />
 				         <?php if ($error_confirm) { ?><div style="color:red; height: 30px; padding-left: 20px;"><span class="error"><?php echo $error_confirm; ?></span></div><?php } ?>
 				      </div>
 			  	</div>
-           		 <div class="form-group">
+           		 <div class="form-group" style="margin-left:0px;margin-right:0px">
 				      <label for="captcha" class="col-xs-3 control-label" style="line-height:52px;">
 				      	验证码：
 				      </label>
@@ -52,7 +52,7 @@
 
 	<?php } ?>
           </div>
-          <div class="pt15"><a href="javascript:void(0);" onclick="$('#register').submit();" class="dl_btn">注 册</a></div>
+          <div class="pt15"><a href="javascript:void(0);" onclick="$('#register').submit();" class="dl_btn" style="margin-bottom:10px;">注 册</a></div>
           <input type="hidden" name="newsletter" value="1" /> 
             <input type="hidden" name="invite_code" value="<?php echo $invitecode; ?>" />
         </div>

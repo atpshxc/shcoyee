@@ -27,14 +27,14 @@
 						          <?php if($small) {?>
 						          <li>
 						      		<a class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>' " href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">
-						      			<img src="<?php echo $small; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" />
+						      			<img class="img-responsive" src="<?php echo $small; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" />
 						      		</a>
 						       	 </li>
 						       	 <?php }?>
 						        <?php foreach ($images as $image) { ?>
 						         <li>
 						        	<a class="cloud-zoom-gallery"  rel="useZoom: 'zoom1', smallImage: '<?php echo $image['middle'] ?>' " href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="" rel="">
-						        		<img src="<?php echo $image['thumb']; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+						        		<img class="img-responsive" src="<?php echo $image['thumb']; ?>" class="zoom-tiny-image" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
 						        	</a>
 						        </li>
 						        <?php } ?>
@@ -133,7 +133,7 @@
     	<div class="col-xs-12">
     		<!--商品详情-->
 			  <div class="pt15">
-			    <div class="left w840">
+			    <div class="left">
 			      <div class="w840_top">
 			        <ul id="tab-menu0" class="xq">
 			          <li ><a class="hover3" onclick="switchMenustyle(0,0)" href="javascript:void(0);">商品详情</a></li>
@@ -191,7 +191,7 @@
 								<b><?php echo $entry_captcha; ?></b><br />
 								<input type="text" name="captcha" value="" />
 								
-								<img src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+								<img class="img-responsive" class="img-responsive" src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
 								</div>
 								<br />
 								<div class="left"><a id="button-review" class="button"><span><?php echo $button_review; ?></span></a></div>
@@ -280,7 +280,7 @@
     <b><?php echo $entry_captcha; ?></b><br />
     <input type="text" name="captcha" value="" />
     
-    <img src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
+    <img class="img-responsive" src="<?php echo HTTP_SERVER?>index.php?route=product/product/captcha" alt="" id="captcha" /><br />
     </div>
     <br />
     <div class="left"><a id="button-review" class="button"><span><?php echo $button_review; ?></span></a></div>
@@ -316,7 +316,7 @@ $('#button-cart').bind('click', function() {
 			
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 				
 					$('.warning').fadeIn('slow');
 				}
@@ -326,7 +326,7 @@ $('#button-cart').bind('click', function() {
 				}
 			}	 
 			if (json['success']) {
-				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
 				$('.attention').fadeIn('slow');
 					
@@ -350,7 +350,7 @@ $('#button-cart-second').bind('click', function() {
 			
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 				
 					$('.warning').fadeIn('slow');
 				}
@@ -361,7 +361,7 @@ $('#button-cart-second').bind('click', function() {
 			}	 
 						
 			if (json['success']) {
-				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+				$('#notification').html('<div class="attention" style="display: none;">' + json['success'] + '<img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
 				$('.attention').fadeIn('slow');
 					
@@ -387,7 +387,7 @@ new AjaxUpload('#button-option-<?php echo $option['product_option_id']; ?>', {
 	autoSubmit: true,
 	responseType: 'json',
 	onSubmit: function(file, extension) {
-		$('#button-option-<?php echo $option['product_option_id']; ?>').after('<img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" id="loading" style="padding-left: 5px;" />');
+		$('#button-option-<?php echo $option['product_option_id']; ?>').after('<img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" id="loading" style="padding-left: 5px;" />');
 	},
 	onComplete: function(file, json) {
 		$('.error').remove();
@@ -433,7 +433,7 @@ $('#button-review').bind('click', function() {
 		beforeSend: function() {
 			$('.success, .warning').remove();
 			$('#button-review').attr('disabled', true);
-			$('#review-title').after('<div class="attention"><img src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
+			$('#review-title').after('<div class="attention"><img class="img-responsive" src="<?php echo HTTP_SERVER?>catalog/view/theme/default/image/loading.gif" alt="" /> <?php echo $text_wait; ?></div>');
 		},
 		complete: function() {
 			$('#button-review').attr('disabled', false);

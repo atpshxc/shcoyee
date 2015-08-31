@@ -4,19 +4,22 @@
     .tab01{width: 100%; }
     .tab01 tr td{ padding:5px 0;}
 </style>
+<ul class="list-inline">
+	<li><p class="bold"><?php echo $display_name;?></p></li>
+	<li><p class="bold"><?php echo $text_transaction_total?>：<span class="red"><?php echo $total;?></span></p></li>
+	<li><p class="bold"><?php echo $text_reward?>：<span class="red"><?php echo $points;?></span></p></li>
+</ul>
 
-  <!--帮助中心-->
 <div class="bg">
-    <div class="left w150">
        <?php echo $column_left; ?>
-    </div>
-    <div class="right w1028" style="width:70%;">
-      <p class="w1028_bt bold"><?php echo $display_name;?></p>
+    <div class="w1028" style="width:100%;margin-bottom:60px;">
+      <!--<p class="w1028_bt bold"><?php echo $display_name;?></p>-->
       
 
     <?php if ($success) { ?>
   <div class="success"><?php echo $success; ?></div>
   <?php } ?>
+  <!--
   <div class="content account-info" style=" border-bottom: 1px solid #e7e7e7; margin-bottom: 10px; margin-top: 10px;">
     <div id="remind" style="margin-bottom: 60px; ">
             <div class="oinfo">
@@ -38,6 +41,7 @@
              </div>
         </div>
   </div>
+  -->
   <?php if ($orders) { ?>
   <table class="list tab01" style=" border-bottom: 1px solid #e7e7e7; margin-bottom: 10px;">
   	<thead>
@@ -74,8 +78,6 @@
   
     </div>
 </div>
-  
-  
   
 
 

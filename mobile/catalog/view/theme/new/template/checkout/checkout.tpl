@@ -1,4 +1,4 @@
-<?php echo $checkout_header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php echo $header; ?><?php echo $checkout_header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <?php echo $content_top; ?>
 
 <!--我的购物车-->
@@ -8,7 +8,7 @@
     
   <?php echo $card_methods; ?> 
   
-  <div class="w1000">
+  <div>
     <div class="f18 pt20">选择收货地址</div>
     <div id="shipping-address" class="selectads mt10">
       <ul id="shippingAddressListPanel" class="myaddrlist">
@@ -16,14 +16,14 @@
         <li class="last">
             <label >
                 <input type="radio" id="addsel" name="shipping_address" style=" display: none;" value="new" onclick="shownewadd();">
-            <span class="name name_newaddr" >使用新收货地址</span></label>
+            <span class="name name_newaddr" style="width: 100%;">使用新收货地址</span></label>
         </li>
       </ul>
       <div id="newadd" class="newaddr formsub formsubB mt5" style=" display: none;"></div>
     </div>
   </div>
     
-   <div class="w1000">
+   <div>
     <div class="f18 pt20">选择配送方式</div>
     <div id="shipping-method" class="selectads mt10">
       <ul id="shippingAddressListPanel" class="myaddrlist">
@@ -32,7 +32,7 @@
     </div>
   </div> 
 
-<div class="w1000">
+<div>
     <div class="f18 pt20">选择支付方式</div>
     <div class="bg_bs mt10" style="border-top:2px solid #e1e1e1; position:relative;">
       <div style="height:39px; border-bottom:1px solid #f5f5f5;"></div>
@@ -50,7 +50,7 @@
     </div>
   </div>
  
-  <div class="w1000">
+  <div>
     <div class="f18 pt20"><a href="/index.php?route=checkout/cart" class="right sc_a f18">[返回购物车]</a>选购商品清单</div>
     <div class="wxts" >
       <div class="wxts_left left hs2 center f14w">温馨提示：</div>
@@ -151,7 +151,7 @@
     
     
   
-  <div class="w1000 pt10">
+  <div class="pt10">
     <div class="hs2 f18 bold pt20">提交订单</div>
     <div class="bg_bs mt10">
       <div class="tjdd of">
@@ -172,7 +172,7 @@
       </div>
     </div>
   </div>
-  <div class="w1000 pt15">
+  <div class="pt15">
     <div class="f18 pt20">配送说明</div>
     <div class="bg_bs mt10 tbsm c57"><span class="bold hs2">特别说明：</span>受中国国家航空管制影响，电池、液体、清洗剂、易燃易爆等产品无法里德空运，可益可能会根据实际情况采用的快递方式，若造成一定延误，请谅解。请随时关注你的订单状态及出库后的包裹跟踪信息（我们会有短信通知）。</div>
   </div>

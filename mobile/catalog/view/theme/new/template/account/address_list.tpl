@@ -3,10 +3,8 @@
 
   <!--帮助中心-->
 <div class="bg">
-    <div class="left w150">
        <?php echo $column_left; ?>
-    </div>
-    <div class="right w1028" style="width:70%;margin-bottom:60px;">
+    <div class="w1028" style="width:100%;margin-bottom:60px;">
       <p class="w1028_bt bold"><?php echo $heading_title; ?></p>
       
       

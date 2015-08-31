@@ -6,8 +6,8 @@ define('HTTP_IMAGE', 'http://localhost/shcoyee/mobile/image/');
 define('HTTP_ADMIN', 'http://localhost/shcoyee/mobile/admin/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/mobile/shcoyee/');
-define('HTTPS_IMAGE', 'http://localhost/mobile/shcoyee/image/');
+define('HTTPS_SERVER', 'http://localhost/shcoyee/mobile/');
+define('HTTPS_IMAGE', 'http://localhost/shcoyee/mobile/image/');
 
 // DIR
 define('DIR_APPLICATION', 'D:\www\shcoyee/mobile/catalog/');

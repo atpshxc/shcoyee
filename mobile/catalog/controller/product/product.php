@@ -324,7 +324,7 @@ $tax=$this->tax->getRate($product_info['tax_class_id'])*$product_info['price']/1
 			
 			$this->data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
 			$this->data['rating'] = (int)$product_info['rating'];
-			$this->data['description'] = str_replace("width: 750px;","width: 840px;",html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8'));
+			$this->data['description'] = str_replace("width: 750px;","width: 100%;",html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8'));
 			$this->data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 			
 			$this->data['products'] = array();

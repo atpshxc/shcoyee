@@ -26,7 +26,6 @@ class ControllerProductCategory extends Controller {
 		} else { 
 			$page = 1;
 		}	
-							
 		if (isset($this->request->get['limit'])) {
 			$limit = $this->request->get['limit'];
 		} else {

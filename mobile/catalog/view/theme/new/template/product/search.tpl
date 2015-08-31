@@ -35,9 +35,9 @@
   	<div class="col-xs-7 col-xs-offset-2">
 			  <div class="input-group  col-xs-15">
                <?php if ($filter_name) { ?>
-					  <input class="form-control" placeholder="Search" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
+					  <input class="form-control" placeholder="请输入商品名称" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
 					  <?php } else { ?>
-					  <input class="form-control" placeholder="Search" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
+					  <input class="form-control" placeholder="请输入商品名称" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
 				<?php } ?>
                <span class="input-group-btn">
                   <button id="button-search" class="btn btn-default" type="button" style="height:34px;">搜索</button>

@@ -14,7 +14,7 @@
                           <input type="radio" name="payment_method" onclick="selectpaymentmethod();" value="<?php echo $payment_method['code']; ?>" id="<?php echo $payment_method['code']; ?>"   />
                           <?php } ?>
                   </label>
-                  <label for="<?php echo $payment_method['code']; ?>"><img src="/catalog/view/theme/new/images/<?php echo $payment_method['code']; ?>.gif" width="127" height="40" /></label>
+                  <label for="<?php echo $payment_method['code']; ?>"><img class="responsive" src="<?php echo HTTP_SERVER?>/catalog/view/theme/new/images/<?php echo $payment_method['code']; ?>.gif" width="127" height="40" /></label>
               </li>
                <?php } ?>
             </ul>

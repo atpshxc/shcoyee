@@ -1,9 +1,9 @@
-<div class="left">
+<div class="left" style="width:35%;">
           <p><a onclick="openShutManager(this,'box4',false)" class="c57" style="cursor:pointer"><span class="jia left"></span>使用我的优惠券</a></p>
-          <div id="box4" style="display:none" class="bm c57">
-            <p><span class="left">优惠券编码：</span>
-                <input type="text" class="yhq_ipt left" id="coupon" name="coupon" value="<?php echo $coupon; ?>" />
-                <a href="javascript:void(0)" id="button-coupon" class="tjyhq"></a></p>
+          <div id="box4" style="display:none">
+            <!--<span class="left">优惠券编码：</span>-->
+                <input type="text" style="width:50%;margin-left:0px;" id="coupon" name="coupon" value="<?php echo $coupon; ?>" />
+                <a href="javascript:void(0)" id="button-coupon" class="tjyhq" style="width:40%" ></a>
           </div>
         </div>
 <script type="text/javascript"><!--

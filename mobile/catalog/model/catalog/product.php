@@ -78,7 +78,7 @@ class ModelCatalogProduct extends Model {
 
 	public function getProducts($data = array()) {
 		if (isset($data['sort']) && $data['sort']=='p.text_best_seller_desc'){
-			return $this->getBestSellerProducts($this->getTotalProducts());
+			return $this->getBestSellerProducts($this->getTotalProducts($data));
 		}
 		if ($this->customer->isLogged()) {
 			$customer_group_id = $this->customer->getCustomerGroupId();
