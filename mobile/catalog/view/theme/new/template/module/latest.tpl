@@ -29,8 +29,8 @@
  		foreach ($product_row as $product) {
  	?>
 		<div class="col-xs-6">
-	         <p class="center cpxx_p pt10"><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"/></a></p>
-	         <p class="pt10 cpxx_w"><a target="_blank" href="<?php echo $product['href']; ?>" title="<?php echo $product['name']; ?>" class="f14w cpxx_a"><?php echo $product['name']; ?></a></p>
+	         <p class="center  pt10"><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"/></a></p>
+	         <p class="pt10 "><a target="_blank" href="<?php echo $product['href']; ?>" title="<?php echo $product['name']; ?>" class="f14w cpxx_a"><?php echo $product['name']; ?></a></p>
 		      <p class="hs lh23">
 		        <?php if (!$product['special']) { ?>  
 		            <span class="f12"><?php echo $product['price']; ?></span>
@@ -78,8 +78,8 @@
  		foreach ($product_row as $product) {
  	?>
 		<div class="col-xs-6">
-	         <p class="center cpxx_p pt10"><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" width="207" height="207" /></a></p>
-             <p class="pt10 cpxx_w"><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>" class="f14w cpxx_a"><?php echo $product['name']; ?></a></p>
+	         <p class="center  pt10"><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" width="207" height="207" /></a></p>
+             <p class="pt10 "><a target="_blank" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>" class="f14w cpxx_a"><?php echo $product['name']; ?></a></p>
           	<p class="hs lh23">
             <?php if (!$product['special']) { ?>  
                 <span class="f12"><?php echo $product['price']; ?></span>

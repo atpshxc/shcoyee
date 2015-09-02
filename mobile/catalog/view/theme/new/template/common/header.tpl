@@ -104,7 +104,7 @@ function removeCart(key,calssid) {
 </script>
 </head>
 
-<body>
+<body class="container">
 <!--top end-->
 <!--搜索-->
 <script type=text/javascript src="<?php echo HTTP_SERVER?>catalog/view/theme/default/kyjs20140915/lrtk.js"></script>

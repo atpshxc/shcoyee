@@ -66,26 +66,27 @@
  		foreach ($product_row as $product) {
  	?>
 		<div class="col-xs-6">
-			<div class="yjk_sp style">
 	         	<p class="yjk_sp_tp">
 					<a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" 
-					title="<?php echo $product['name']; ?>" width="207" height="207" 
+					title="<?php echo $product['name']; ?>" width="207" height="207" onload="this.height=this.width" 
 					alt="<?php echo $product['name']; ?>" /></a>
 				</p>
 			    <div class="yjk_sp_wz">
 			      <a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>" class="f14 lh20 c71">
-					<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
-					<div class=" hs"><span class="right pt8">新品上线</span> 
-			                    <div style="float: left">
-			        <?php if (!$product['special']) { ?>
-						<p class="f20" style=" width: 148px;" ><?php echo $product['price']; ?></p>
-			        <?php } else { ?>
-			        <p class="f20" style="  width: 148px;"><?php echo $product['special']; ?></p><p style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p>
-			        <?php } ?>
+					<p style="height: 40px;"><?php echo $product['name']; ?></p>
+  				  </a>
+				  <div class=" hs">
+					<span class="right pt8">新品上线</span> 
+			        <div style="float: left">
+				        <?php if (!$product['special']) { ?>
+							<p class="f20"><?php echo $product['price']; ?></p>
+				        <?php } else { ?>
+				        <p class="f20"><?php echo $product['special']; ?></p><p style=" float: left; margin-top: 0px; font-size: 14px;" class="qian2"><?php echo $product['price']; ?></p>
+				        <?php } ?>
 			        </div>
-					</div>
+			  	  </div>
 			    </div>
-			    <div class="sp2 f14"><?php 
+			    <div class="sp2 f14" style="margin-top:-10px;margin-right:15px"><?php 
 				switch($product['classid']){
 					case 1:
 						echo $text_class_id_1;
@@ -98,8 +99,7 @@
 						break;
 				}
 				?></div>
-			</div>	
-	    </div>
+		    </div>
 <?php
 		}
 ?>
