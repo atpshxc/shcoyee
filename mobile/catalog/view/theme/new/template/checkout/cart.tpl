@@ -66,17 +66,17 @@
         <tr>
           <td style="text-align:left;">
           	<div class="row">
-          		<div class="col-xs-2">
-          			<a href="<?php echo $product['href']; ?>" class="spt left"><img src="<?php echo $product['thumb']; ?>" width="207" height="207" /></a>
+          		<div class="col-xs-3">
+          			<a href="<?php echo $product['href']; ?>" class="spt left"><img class="responsive" src="<?php echo $product['thumb']; ?>" width="207" height="207" /></a>
           		</div>
-          		<div class="col-xs-10">
-          			<a href="<?php echo $product['href']; ?>" class="bt5 left"><?php echo $product['name']; ?> <?php if (!$product['stock']) { ?><span class="red bold"> ***    </span><?php } ?></a>
+          		<div class="col-xs-9">
+          			<a href="<?php echo $product['href']; ?>" style="width:100%;" class="bt5 left"><?php echo $product['name']; ?> <?php if (!$product['stock']) { ?><span class="red bold"> ***    </span><?php } ?></a>
 		              <br><br>
 		              	单价:<?php echo $product['price']; ?>&nbsp;&nbsp;税:<?php echo $product['tax_money']; ?><?php if ($product['tax_money']<=50) { ?><span class="red bold">（免税）</span><?php } ?>
           		</div>
           	</div>
           	<div class="row">
-          		<div class="col-xs-4 col-xs-offset-2">
+          		<div class="col-xs-3 col-xs-offset-2">
           			<?php echo $product['total']; ?>
           		</div>
           		<div class="col-xs-3">
@@ -85,7 +85,7 @@
 		                <input class="text" readonly="readonly"  name="quantity[<?php echo $product['key']; ?>]" id="buy-num" value="<?php echo $product['quantity']; ?>" >
 		            </div>
       			</div>
-		        <div class="col-xs-3">
+		        <div class="col-xs-3 col-xs-offset-1">
             		<a href="javascript:addToWishList('<?php echo $product['product_id']; ?>')" class="sc_a">收藏</a>&nbsp;&nbsp;<a href="<?php echo $product['remove']; ?>&classid=1" class="sc_a">移除</a>
 		        </div>
           	</div>

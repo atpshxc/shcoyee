@@ -32,8 +32,10 @@
 					<?php } ?>
 			</select>
   	</div>
-  	<div class="col-xs-7 col-xs-offset-2">
-			  <div class="input-group  col-xs-15">
+ </div>
+ <div class="row">
+  	<div class="col-xs-12">
+			  <div class="input-group ">
                <?php if ($filter_name) { ?>
 					  <input class="form-control" placeholder="请输入商品名称" type="text" name="filter_name" id="search-filter_name" value="<?php echo $filter_name; ?>" />
 					  <?php } else { ?>
@@ -84,10 +86,10 @@
  		foreach ($product_row as $product) {
  	?>
 		<div class="col-xs-6">
-			<div class="yjk_sp style">
+			<div class="yjk_sp style" style="width:100%">
 		         <p class="yjk_sp_tp">
 					<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" 
-					title="<?php echo $product['name']; ?>" width="207" height="210" 
+					title="<?php echo $product['name']; ?>" style="width:100%;height:100%;" 
 					alt="<?php echo $product['name']; ?>" /></a>
 				 </p>
 			    <div class="yjk_sp_wz">
@@ -106,7 +108,7 @@
 				        <?php } ?>
 					</div>
 	   			</div>
-			    <div class="sp2 f14"><?php 
+			    <div class="sp2 f14" style="margin-top:-60px"><?php 
 					switch($product['classid']){
 						case 1:
 							echo $text_class_id_1;

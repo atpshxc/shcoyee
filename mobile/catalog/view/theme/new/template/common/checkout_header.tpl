@@ -72,7 +72,7 @@ function removeCart(key,calssid) {
 <script language="javascript">          function switchMenustyle(num) {              for(var id = 1; id <= 4; id++) {                 if (id == num) {                                       document.getElementById("mynav" + id).className= "hover";                 }                  else {                                   document.getElementById("mynav" + id).className = "";                 }}         }          </script>
 </head>
 
-<body>
+<body class="container">
  <!--top-->
 <?php echo $topnav; ?>
 <!--top end-->

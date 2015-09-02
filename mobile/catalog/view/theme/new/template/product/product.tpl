@@ -13,7 +13,7 @@
     <?php if ($thumb || $images) { ?>
 	    <div class="row">
 	    	<div class="col-xs-12">
-	    	 	<div class="left w450 dw">
+	    	 	<div class="left dw">
 		    		 <?php if ($thumb) { ?>
 				      <div class="image zoom-small-image" >
 				      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" id="zoom1" rel="adjustX: 10, adjustY:-4" >
@@ -54,7 +54,7 @@
     <div class="row">
     	<div class="col-xs-12">
 		      <div>
-		        <span class="left w698_bt"><?php echo $heading_title; ?></span>
+		        <span class="left w698_bt" style="width:100%;"><?php echo $heading_title; ?></span>
 		        <!--<span class="right cpzx f14">产地直销 — 自贸</span>-->
 		      </div>
 		      
@@ -109,8 +109,8 @@
 		</script>
 		
 		      <div class="yh pd26 clear">
-		        <a rel="nofollow" id="button-cart" style="cursor: pointer;"><span><?php echo $button_cart; ?></span></a>
-		        <a rel="nofollow" style="cursor: pointer;" onclick="addToWishList('<?php echo $product_id; ?>');"><?php echo $button_wishlist; ?></a> 
+		        <a style="padding:0 10px" rel="nofollow" id="button-cart" style="cursor: pointer;"><span><?php echo $button_cart; ?></span></a>
+		        <a style="padding:0 20px" rel="nofollow" style="cursor: pointer;" onclick="addToWishList('<?php echo $product_id; ?>');"><?php echo $button_wishlist; ?></a> 
 		      </div>
 		
 		<script src="<?php echo HTTP_SERVER?>catalog/view/javascript/product.js"></script>
@@ -215,9 +215,6 @@
 	    </div>
 	<!--END product-info -->
 	</div>
-<!--END w12002 -->
-</div>
-   	
   
 <br/><br/><br/>
   <!--

@@ -5,18 +5,18 @@
 <?php if ($special_products) { 
 	$hot_product = $special_products[0];
 ?>
-<div class="w12002 hot dw">
-  <div class="left dw"><a target="_blank"  href="<?php echo $hot_product['href']; ?>"><img src="<?php echo $hot_product['thumb']; ?>" width="588" height="319" /></a>
+<div class="hot dw">
+  <div class="left dw"><a target="_blank"  href="<?php echo $hot_product['href']; ?>"><img class="img-responsive" src="<?php echo $hot_product['thumb']; ?>" width="100%" height="100%" /></a>
     <div class="sp f14">进口商品</div>
   </div>
-  <div class="right dw w600">
+  <div class="right dw">
     <p class="bt3"><a target="_blank"  href="<?php echo $hot_product['href']; ?>"><?php echo $hot_product['name']; ?></a></p>
     <ul class="desc">
       <li><?php echo $hot_product['meta_description']; ?></li>
     </ul>
     <div class="pt15">
 		<div id="end_time" style="display:none"><?php echo $hot_product['date_end']; ?></div>
-      <div class="left c57 f14"><img src="catalog/view/theme/new/images/sj.jpg" width="17" height="16" class="left sj" /><p id="remainTime" style="width:400px;height:20px" ></p></div>
+      <div class="left c57 f14"><img class="img-responsive" src="catalog/view/theme/new/images/sj.jpg" width="17" height="16" class="left sj" /><p id="remainTime" style="width:400px;height:20px" ></p></div>
       <div class="right f14 c57"><span class="bold hs"><?php echo $hot_product['totalSeller']; ?></span>件已售</div>
     </div>       
   </div>
@@ -68,7 +68,7 @@
 		<div class="col-xs-6">
 	         	<p class="yjk_sp_tp">
 					<a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" 
-					title="<?php echo $product['name']; ?>" width="207" height="207" onload="this.height=this.width" 
+					title="<?php echo $product['name']; ?>" style="width:100%;height:100%;"
 					alt="<?php echo $product['name']; ?>" /></a>
 				</p>
 			    <div class="yjk_sp_wz">
@@ -86,7 +86,7 @@
 			        </div>
 			  	  </div>
 			    </div>
-			    <div class="sp2 f14" style="margin-top:-10px;margin-right:15px"><?php 
+			    <div class="sp2 f14" style="margin-top:-60px;margin-right:15px"><?php 
 				switch($product['classid']){
 					case 1:
 						echo $text_class_id_1;
