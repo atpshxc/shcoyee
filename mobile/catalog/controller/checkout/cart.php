@@ -257,7 +257,6 @@ class ControllerCheckoutCart extends Controller {
 				foreach ($results as $result) {
 					if ($this->config->get($result['code'] . '_status')) {
 						$this->load->model('total/' . $result['code']);
-		
 						$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
 					}
 				}
@@ -491,7 +490,10 @@ class ControllerCheckoutCart extends Controller {
 				$this->cart->add($this->request->post['product_id'],$this->request->get['classid'], $quantity, $option);
 			
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
-			
+
+				//add by yong by 2015/08/17 for redirect to cart after click add to cart
+				$json['success_redirect'] = $this->url->link('checkout/cart');
+				
 				unset($this->session->data['shipping_methods']);
 				unset($this->session->data['shipping_method']);
 				unset($this->session->data['payment_methods']);
@@ -561,7 +563,7 @@ class ControllerCheckoutCart extends Controller {
 			} else {
 				$total = false;
 			}
-				
+			
 			$tax=$this->tax->getRate($result['tax_class_id'])*$result['price']/100;
 			$this->data['products'][] = array(
 				'key'      => $result['key'],
