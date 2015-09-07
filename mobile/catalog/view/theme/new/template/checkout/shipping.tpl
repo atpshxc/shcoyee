@@ -14,7 +14,7 @@ if ($error_warning) { ?>
         <?php } else { ?>
                 <input type="radio" name="shipping_method"  onclick="selectshppingmethod();" value="<?php echo $quote['code']; ?>" id="<?php echo $quote['code']; ?>" />
         <?php } ?>
-            <span class="addrinfo"> &nbsp; &nbsp;<label for="<?php echo $quote['code']; ?>"><?php echo $quote['title']; ?></label></span></label><label for="<?php echo $quote['code']; ?>"><?php echo $quote['text']; ?><span class="help"><?php echo $shipping_method['description']; ?></span></label>
+            <span class="addrinfo" style="width:200px;"> &nbsp;<label for="<?php echo $quote['code']; ?>"><?php echo $quote['title']; ?></label></span></label><label for="<?php echo $quote['code']; ?>"><?php echo $quote['text']; ?><span class="help"><?php echo $shipping_method['description']; ?></span></label>
         </li>
   <?php } ?>
   <?php } else { ?>

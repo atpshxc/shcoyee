@@ -10,7 +10,6 @@ foreach ($paymentorders as $order)
         }
    ?>     
 <div class="bg2">
-  <div class="w1000">
   <div class="f24 hs2 pt15"><i class="wdgwc_bt2"></i>完成支付</div>
     <div class="bg_bs dd mt10">
       <p class="f20 c35 dd_p">您的<span class="red"><?php echo $all_ords; ?></span> 笔订单已提交成功，请您在提交订单后<span class="red">2小时</span>内完成支付，否则订单会自动取消！</p>
@@ -23,7 +22,6 @@ foreach ($paymentorders as $order)
          }
          ?>
          
- </div>
 </div>
  <?php echo $content_bottom; ?>
 

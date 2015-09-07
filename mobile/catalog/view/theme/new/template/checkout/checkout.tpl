@@ -52,10 +52,8 @@
  
   <div>
     <div class="f18 pt20"><a href="/index.php?route=checkout/cart" class="right sc_a f18">[返回购物车]</a>选购商品清单</div>
-    <div class="wxts" >
-      <div class="wxts_left left hs2 center f14w">温馨提示：</div>
-      <div class="left c57">将根据具体拆单情况，确定最终税费，每单关税低于50（含）免税。 </div>
-      <div class="wxts_jt"></div>
+    <div class="alert alert-warning">
+    	温馨提示：将根据具体拆单情况，确定最终税费，每单关税低于50（含）免税。
     </div>
     <div class="pt10">
       
@@ -100,11 +98,11 @@
           ?> 
       <table class="table1 f14w">
         <tr>
-          <td style="width:45%">商品名称</td>
-          <td style="width:10%">单价</td>
-          <td style="width:10%">进口税</td>
-          <td style="width:12%">数量</td>
-          <td style="width:10%">小计</td>
+          <td style="width:35%">商品名称</td>
+          <td style="width:15%">单价</td>
+          <td style="width:15%">进口税</td>
+          <td style="width:10%">数量</td>
+          <td style="width:25%">小计</td>
         </tr>
       </table>
        <?php
@@ -115,11 +113,14 @@
         ?>
       <table class="table2 center">
         <tr>
-          <td style="width:45%; text-align:left;"><a href="<?php echo $product['href']; ?>" class="spt left"><img src="<?php echo $product['thumb']; ?>" width="207" height="207" /></a><a href="<?php echo $product['href']; ?>" class="bt5 left"><?php echo $product['name']; ?></a></td>
-          <td style="width:10%">¥<?php echo $product['price']; ?></td>
-          <td style="width:10%">¥<?php echo $product['tax']; ?></td>
-          <td style="width:12%"><?php echo $product['quantity']; ?></td>
-          <td style="width:10%"><?php echo $product['total']; ?></td>
+          <td style="width:35%; text-align:left;display:inline;">
+          	<a href="<?php echo $product['href']; ?>" class="spt left"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" width="207" height="207" /></a>
+          	<a href="<?php echo $product['href']; ?>" class="bt5 left" style="width:40%;font-size:10px"><?php echo $product['name']; ?></a>
+          </td>
+          <td style="width:15%">¥<?php echo $product['price']; ?></td>
+          <td style="width:15%">¥<?php echo $product['tax']; ?></td>
+          <td style="width:10%"><?php echo $product['quantity']; ?></td>
+          <td style="width:25%"><?php echo $product['total']; ?></td>
         </tr>
       </table>
         <?php 
@@ -163,7 +164,7 @@
           <p class="f14 pb12 of"><span class="right qian7 hs2">¥<?php echo $all_pisprice; ?></span><span class="right spxj c57">共 <span class="hs2"><?php echo $all_pis; ?></span> 件商品商品金额总计：</span></p>
           <p class="f14 pb12 of"><span class="right qian7">¥<?php echo $all_shapping; ?></span><span class="right spxj c57">运费小计：</span></p>
           <p class="f14 pb12 of"><span class="right qian7">¥<?php echo $all_tax; ?></span><span class="right spxj c57">税费小计：</span></p>
-          <p class="right f14 mr20 c57"><input type="checkbox" />我已阅读并同意<a href="javascript:void(0);">《跨境通消费者购物须知》</a></p>
+          <p class="right f14 mr20 c57"><input type="checkbox" checked/>我已阅读并同意<a href="javascript:void(0);">《跨境通消费者购物须知》</a></p>
         </div>
       </div>
       <div class="of tj00">
@@ -263,21 +264,20 @@ function addadd ()
 	});	
     }
 function selectshppingmethod() {
-    alert('ss');
 	$.ajax({
 		url: 'index.php?route=checkout/shipping',
 		type: 'post',
 		data: $('#shipping-method input[type=\'radio\']:checked, #shipping-method textarea'),
 		dataType: 'json',
-		beforeSend: function() { alert('11');
+		beforeSend: function() { 
 			$('#button-shipping').attr('disabled', true);
 			$('#button-shipping').after('<span class="wait">&nbsp;<img src="catalog/view/theme/default/image/loading.gif" alt="" /></span>');
 		},	
-		complete: function() { alert('22');
+		complete: function() { 
 			$('#button-shipping').attr('disabled', false);
 			$('.wait').remove();
 		},			
-		success: function(json) { alert('33');
+		success: function(json) { 
 			$('.warning').remove();
 			
 			if (json['redirect']) {
@@ -434,6 +434,8 @@ function checkoutComfirm(){
                                 //document.getElementById("submit_order").submit();
                                  window.location.href="index.php?route=checkout/orderspayment";
 			}
+		},error: function(json) {
+			alert(json['responseText']);
 		}		
 	});
 });
