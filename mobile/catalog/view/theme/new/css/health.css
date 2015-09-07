@@ -5,7 +5,7 @@
 .hot:hover{border:1px solid #ff3048;}
 .dw{position:relative}
 .sp{position:absolute; top:10px; left:0; background:#ff3048;border-radius:0px 15px 15px 0px; padding:0 10px; height:28px; line-height:28px; color:#fff;}
-.sp2{position:absolute;top:208px; right:0; background:#ff3048;border-radius:15px 0px 0px 15px; padding:0 10px; height:28px; line-height:28px; color:#fff;}
+.sp2{position:absolute;bottom:80px; right:0; background:#ff3048;border-radius:15px 0px 0px 15px; padding:0 10px; height:28px; line-height:28px; color:#fff;}
 .w600{width:570px; padding-right:18px;}
 .bt3{ height:60px; line-height:60px; border-bottom:1px dotted #e7e6e6; color:#353535;overflow: hidden;text-overflow: ellipsis; white-space: nowrap; font-size:18px;}
 .bt3 a:hover{color:#ff3048;}
