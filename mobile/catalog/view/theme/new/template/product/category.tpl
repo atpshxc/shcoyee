@@ -6,7 +6,7 @@
 	$hot_product = $special_products[0];
 ?>
 <div class="hot dw">
-  <div class="left dw"><a target="_blank"  href="<?php echo $hot_product['href']; ?>"><img class="img-responsive" src="<?php echo $hot_product['thumb']; ?>" width="100%" height="100%" /></a>
+  <div class="left dw"><a target="_blank"  href="<?php echo $hot_product['href']; ?>"><img class="img-responsive" src="<?php echo $hot_product['thumb']; ?>" /></a>
     <div class="sp f14">进口商品</div>
   </div>
   <div class="right dw">
@@ -68,7 +68,7 @@
 		<div class="col-xs-6">
 	         	<div class="yjk_sp_tp">
 					<a  target="_blank"  href="<?php echo $product['href'].'&class='.$classid; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" 
-					title="<?php echo $product['name']; ?>" style="width:100%;height:100%;"
+					title="<?php echo $product['name']; ?>"
 					alt="<?php echo $product['name']; ?>" /></a>
 					<div style="margin-right:15px" class="sp2 f14"><?php 
 					switch($product['classid']){

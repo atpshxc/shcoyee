@@ -88,8 +88,8 @@
 		<div class="col-xs-6">
 			<div class="yjk_sp style" style="width:100%">
 		         <div class="yjk_sp_tp">
-					<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" 
-					title="<?php echo $product['name']; ?>" style="width:100%;height:100%;" 
+					<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img class="img-responsive" src="<?php echo $product['thumb']; ?>" 
+					title="<?php echo $product['name']; ?>"
 					alt="<?php echo $product['name']; ?>" /></a>
 					<div class="sp2 f14"><?php 
 						switch($product['classid']){
