@@ -23,14 +23,33 @@
     </thead>
     <tbody class="table03">
         <tr style=" line-height: 24px;">
-        <td class="left" style="width: 50%;">
-          <b><?php echo $text_order_id; ?></b> #<?php echo $order_id; ?><br />
-          <b><?php echo $text_date_added; ?></b> <?php echo $date_added; ?></td>
-        <td class="left"><b><?php echo $text_payment_method; ?></b> <?php echo $payment_method; ?><br />
-          <?php if ($shipping_method) { ?>
-          <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
-          <?php } ?></td>
-      </tr>
+	        <td class="left"">
+	          <b><?php echo $text_order_id; ?></b> 
+	        </td>
+	        <td class="left"">
+	          #<?php echo $order_id; ?>
+	        </td>
+       </tr>
+        <tr style=" line-height: 24px;">
+	        <td class="left"">
+	          <b><?php echo $text_date_added; ?></b> 
+	        </td>
+	        <td class="left"">
+	          <?php echo $date_added; ?>
+	        </td>
+       </tr>
+        <tr style=" line-height: 24px;">
+	        <td class="left"">
+	          <?php if ($shipping_method) { ?>
+	          	<b><?php echo $text_shipping_method; ?></b> 
+	          <?php } ?>
+	        </td>
+	        <td class="left"">
+	          <?php if ($shipping_method) { ?>
+	          <?php echo $shipping_method; ?>
+	          <?php } ?>
+	        </td>
+       </tr>
     </tbody>
   </table>
   <?php if ($shipping_required) { ?>
