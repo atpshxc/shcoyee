@@ -87,11 +87,25 @@
  	?>
 		<div class="col-xs-6">
 			<div class="yjk_sp style" style="width:100%">
-		         <p class="yjk_sp_tp">
+		         <div class="yjk_sp_tp">
 					<a  tager="_blank"  href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" 
 					title="<?php echo $product['name']; ?>" style="width:100%;height:100%;" 
 					alt="<?php echo $product['name']; ?>" /></a>
-				 </p>
+					<div class="sp2 f14"><?php 
+						switch($product['classid']){
+							case 1:
+								echo $text_class_id_1;
+								break;
+							case 2:
+								echo $text_class_id_2;
+								break;
+							case 3:
+								echo $text_class_id_3;
+								break;
+						}
+						?>
+					</div>
+				 </div>
 			    <div class="yjk_sp_wz">
 			      <a  tager="_blank"  href="<?php echo $product['href']; ?>" class="f14 lh20 c71">
 					<p style="height: 40px;"><?php echo $product['name']; ?></p></a>
@@ -108,20 +122,6 @@
 				        <?php } ?>
 					</div>
 	   			</div>
-			    <div class="sp2 f14" style="margin-top:-60px"><?php 
-					switch($product['classid']){
-						case 1:
-							echo $text_class_id_1;
-							break;
-						case 2:
-							echo $text_class_id_2;
-							break;
-						case 3:
-							echo $text_class_id_3;
-							break;
-					}
-					?>
-				</div>
 			</div>
 	  </div>
 <?php
